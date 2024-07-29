@@ -203,6 +203,67 @@ module.exports = {
 2. 默认开启严格模式；
 :::
 
+### useGlob
+
+能够使用 glob 语法筛选出节点。
+
+支持的语法见 [这里](https://github.com/micromatch/micromatch#matching-features)。
+
+```js
+// surgio.conf.js
+const { utils } = require('surgio');
+
+module.exports = {
+  customFilters: {
+    premiumNodes: utils.useGlob('*Premium*'),
+  },
+}
+```
+
+### discardGlob
+
+能够使用 glob 语法移出节点。
+
+支持的语法见 [这里](https://github.com/micromatch/micromatch#matching-features)。
+
+```js
+// surgio.conf.js
+const { utils } = require('surgio');
+
+module.exports = {
+  customFilters: {
+    hongKongNodes: utils.discardGlob('*(US|JP)*'), // 不匹配 US 和 JP
+  },
+}
+```
+
+### reverseFilter
+
+你可以使用 `reverseFilter` 来反转过滤器的结果。
+
+```js
+const notUSFilter = reverseFilter(usFilter)
+```
+
+### mergeReversedFilters
+
+你可以使用 `mergeReversedFilters` 来合并多个反转过滤器，`discardKeywords`, `discardProviders`, `discardGlob` 过滤器。
+
+
+```js
+// 丢弃 US 和包含 BGP 关键字的节点
+const notUSAndNotBGP = mergeReversedFilters(
+  [notUSFilter, discardKeywords(['BGP'])],
+  true, // 严格模式
+)
+
+// 香港 BGP ✅
+// 香港 IPLC ✅
+// 洛杉矶 BGP 🚫
+// 洛杉矶 IPLC ✅
+```
+
+
 ## 如何在自定义过滤器时引用内置的过滤器
 
 你可能需要在自定义过滤器时引用内置的过滤器（你可以在 [这里](/guide/custom-template.md#过滤器) 找到所有内置的过滤器）。

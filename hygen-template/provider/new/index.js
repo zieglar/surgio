@@ -1,6 +1,6 @@
-'use strict';
+'use strict'
 
-const { SupportProviderEnum } = require('../../../build/types');
+const { SupportProviderEnum } = require('../../../build/internal')
 
 module.exports = {
   prompt: ({ prompter: inquirer }) => {
@@ -29,7 +29,8 @@ module.exports = {
             SupportProviderEnum.ShadowsocksJsonSubscribe,
             SupportProviderEnum.ShadowsocksrSubscribe,
             SupportProviderEnum.ShadowsocksSubscribe,
-          ].includes(results.type);
+            SupportProviderEnum.Trojan,
+          ].includes(results.type)
         },
         validate: (str) => /^https?:\/{2}/.test(str),
       },
@@ -49,14 +50,14 @@ module.exports = {
             SupportProviderEnum.ShadowsocksJsonSubscribe,
             SupportProviderEnum.ShadowsocksrSubscribe,
             SupportProviderEnum.ShadowsocksSubscribe,
-          ].includes(results.type);
+            SupportProviderEnum.Trojan,
+          ].includes(results.type)
         },
       },
       {
         type: 'confirm',
-        name: 'relayUrl',
-        message:
-          '是否开启订阅转发，推荐使用了封锁 now.sh IP 的机场开启（默认关闭）',
+        name: 'isRelayUrlEnabled',
+        message: '是否开启订阅转发（默认关闭）',
         default: false,
         when: (results) => {
           return [
@@ -64,9 +65,17 @@ module.exports = {
             SupportProviderEnum.ShadowsocksJsonSubscribe,
             SupportProviderEnum.ShadowsocksrSubscribe,
             SupportProviderEnum.ShadowsocksSubscribe,
-          ].includes(results.type);
+            SupportProviderEnum.Trojan,
+          ].includes(results.type)
         },
       },
-    ]);
+      {
+        type: 'input',
+        name: 'relayUrl',
+        message: '输入订阅转发地址',
+        when: (results) => results.isRelayUrlEnabled,
+        validate: (str) => /^https?:\/{2}/.test(str),
+      },
+    ])
   },
-};
+}

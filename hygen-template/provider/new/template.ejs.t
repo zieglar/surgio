@@ -2,8 +2,6 @@
 to: provider/<%= name %>.js
 
 ---
-'use strict';
-
 const { utils } = require('surgio');
 
 module.exports = {
@@ -20,8 +18,8 @@ module.exports = {
 <% if (typeof udpRelay !== 'undefined' && udpRelay === true) { -%>
   udpRelay: true,
 <% } -%>
-<% if (typeof relayUrl !== 'undefined' && relayUrl === true) { -%>
-  relayUrl: true,
+<% if (typeof relayUrl === 'string') { -%>
+  relayUrl: '<%= relayUrl %>',
 <% } -%>
 };
 

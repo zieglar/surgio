@@ -1,3 +1,676 @@
+## [3.9.2](https://github.com/geekdada/surgio/compare/v3.9.1...v3.9.2) (2024-06-30)
+
+
+### Features
+
+* **singbox:** Support network=tcp in VMESS/VLESS ([5e56602](https://github.com/geekdada/surgio/commit/5e5660283e77814229d5ec3043ee76146bf4880e))
+
+
+
+## [3.9.1](https://github.com/geekdada/surgio/compare/v3.9.0...v3.9.1) (2024-06-11)
+
+
+### Bug Fixes
+
+* singbox ([2aea1c2](https://github.com/geekdada/surgio/commit/2aea1c2b52b2ee527831cbef6a8b2fed20034628))
+
+
+
+# [3.9.0](https://github.com/geekdada/surgio/compare/v3.8.2...v3.9.0) (2024-05-22)
+
+
+### Features
+
+* support dialer-proxy and smux property in clash.meta config ([64c9575](https://github.com/geekdada/surgio/commit/64c957581e557213570fa1b43df3bb6682b00aba))
+
+
+
+## [3.8.2](https://github.com/geekdada/surgio/compare/v3.8.1...v3.8.2) (2024-05-21)
+
+
+
+## [3.8.1](https://github.com/geekdada/surgio/compare/v3.8.0...v3.8.1) (2024-05-09)
+
+
+
+# [3.8.0](https://github.com/geekdada/surgio/compare/v3.7.1...v3.8.0) (2024-05-06)
+
+
+### Features
+
+* make resolveHostname a global option ([3b6f3a7](https://github.com/geekdada/surgio/commit/3b6f3a7f5a7c006ae25ab247c8f84d440c6105b2))
+
+
+
+## [3.7.1](https://github.com/geekdada/surgio/compare/v3.7.0...v3.7.1) (2024-05-03)
+
+
+### Features
+
+* per proxy `test-timeout` for Surge nodes ([e4bee65](https://github.com/geekdada/surgio/commit/e4bee657bd6c091f4dbea06a8777cfd61e1c0c8f))
+
+
+
+# [3.7.0](https://github.com/geekdada/surgio/compare/v3.7.0-beta.1...v3.7.0) (2024-05-03)
+
+
+### Bug Fixes
+
+* docs ([1ebb73e](https://github.com/geekdada/surgio/commit/1ebb73e4c1f11face1099e07b4ea5777329f5a77))
+
+
+
+# [3.7.0-beta.1](https://github.com/geekdada/surgio/compare/v3.6.6...v3.7.0-beta.1) (2024-05-01)
+
+
+### Features
+
+* change how sing-box config is generated ([46d5faa](https://github.com/geekdada/surgio/commit/46d5faa86cdd35a0720471a7c53e5de4e22dce02))
+* introduce sing-box support ([d6d9403](https://github.com/geekdada/surgio/commit/d6d94030e08fe64e8ccfd2e3afb0a1fd2b2daf42))
+
+
+
+## [3.6.6](https://github.com/geekdada/surgio/compare/v3.6.5...v3.6.6) (2024-03-22)
+
+
+
+## [3.6.5](https://github.com/geekdada/surgio/compare/v3.6.4...v3.6.5) (2024-03-18)
+
+
+### Features
+
+* allow setting ECN and blockQuic in provider config ([77f7ac9](https://github.com/geekdada/surgio/commit/77f7ac97d82c568930b343202d015fa885848f07))
+
+
+
+## [3.6.4](https://github.com/geekdada/surgio/compare/v3.6.3...v3.6.4) (2024-03-18)
+
+
+### Bug Fixes
+
+* vless isn't available in custom provider ([06d3efd](https://github.com/geekdada/surgio/commit/06d3efdce91f596d0b4f2198ea78cf1e54b88c74))
+
+
+
+## [3.6.3](https://github.com/geekdada/surgio/compare/v3.6.2...v3.6.3) (2024-03-17)
+
+
+### Features
+
+* add blockQuic option for surge ([23fed38](https://github.com/geekdada/surgio/commit/23fed3810c148c4254f221350110150bb7496027))
+
+
+
+## [3.6.2](https://github.com/geekdada/surgio/compare/v3.6.1...v3.6.2) (2024-03-16)
+
+
+### Bug Fixes
+
+* vless + reality config lacks of client fingerprint ([7c66c01](https://github.com/geekdada/surgio/commit/7c66c01934c050db6097680226b7eb351cfe0cf0))
+
+
+
+## [3.6.1](https://github.com/geekdada/surgio/compare/v3.6.0...v3.6.1) (2024-03-16)
+
+
+### Bug Fixes
+
+* Expand condition check to include Vless nodes in ClashProvider ([e2f54fc](https://github.com/geekdada/surgio/commit/e2f54fc33307386fc2dd48209a92c74a06754490))
+
+
+
+# [3.6.0](https://github.com/geekdada/surgio/compare/v3.5.1...v3.6.0) (2024-03-16)
+
+
+### Bug Fixes
+
+* vmess cipher ([1618630](https://github.com/geekdada/surgio/commit/161863080b4cd5ce51a689ae458da6e6ad6bb59e))
+
+
+### Features
+
+* add clashConfig.enableVless ([050c0a3](https://github.com/geekdada/surgio/commit/050c0a33fc9794a8cc68823e02a1ec759b086415))
+* add support for vless protocol ([960c851](https://github.com/geekdada/surgio/commit/960c851c49ce01bba54265d3a7239090e964691e))
+* input and output vless configuration ([f09a66e](https://github.com/geekdada/surgio/commit/f09a66efe1c742dd89c95822e9f93cce7b2caa56))
+
+
+
+## [3.5.1](https://github.com/geekdada/surgio/compare/v3.5.0...v3.5.1) (2024-03-05)
+
+
+### Bug Fixes
+
+* discard more than one HTTP headers from Vmess+HTTP when reading or outputting a Clash subscription ([ebed482](https://github.com/geekdada/surgio/commit/ebed482e38835e130e6f9c0fc7a4474b634811d7))
+
+
+
+# [3.5.0](https://github.com/geekdada/surgio/compare/v3.4.3...v3.5.0) (2024-03-05)
+
+
+### Bug Fixes
+
+* console ([a5f59e9](https://github.com/geekdada/surgio/commit/a5f59e99631db853dbd87e0f4ee18b269664696f))
+
+
+### Features
+
+* add CLASH_META_SUPPORTED_RULE ([4e6f600](https://github.com/geekdada/surgio/commit/4e6f600ab947b769ac9760537eedbe004a3c026b))
+* add new filters `clashMeta` and `stash` ([654ceba](https://github.com/geekdada/surgio/commit/654ceba8818a83e203eaddf5d9b56914462cb62f))
+* add support for more VMESS transport protocol ([08b88b9](https://github.com/geekdada/surgio/commit/08b88b900f78de91b08f31f891f8fed52997d209))
+
+
+
+## [3.4.3](https://github.com/geekdada/surgio/compare/v3.4.2...v3.4.3) (2024-02-17)
+
+
+### Bug Fixes
+
+* isClashMetaForAndroid ([9cd1b5d](https://github.com/geekdada/surgio/commit/9cd1b5de78df1bfb83061e6d54db2a51ae531005))
+
+
+
+## [3.4.2](https://github.com/geekdada/surgio/compare/v3.4.1...v3.4.2) (2024-02-17)
+
+
+### Features
+
+* add isClashMetaForAndroid ([4e5f10d](https://github.com/geekdada/surgio/commit/4e5f10d633c03237a58a3b637dbb000da48c5e63))
+
+
+
+## [3.4.1](https://github.com/geekdada/surgio/compare/v3.4.0...v3.4.1) (2024-02-04)
+
+
+### Features
+
+* add isClashVerge ([f371d55](https://github.com/geekdada/surgio/commit/f371d55d9f087245159825f2558e5a3a80535802))
+
+
+
+# [3.4.0](https://github.com/geekdada/surgio/compare/v3.3.0...v3.4.0) (2024-02-03)
+
+
+### Features
+
+* **types:** ArtifactConfig add subscriptionUserInfoProvider ([ec18a1d](https://github.com/geekdada/surgio/commit/ec18a1d7a98e25f551cf60094a70025aa691a34e))
+
+
+
+# [3.3.0](https://github.com/geekdada/surgio/compare/v3.2.3...v3.3.0) (2024-01-21)
+
+
+### Features
+
+* getClashNodeNames 增加默认节点 ([97b710a](https://github.com/geekdada/surgio/commit/97b710a4351e2846831dbad00cf28f2581972945))
+
+
+
+## [3.2.3](https://github.com/geekdada/surgio/compare/v3.2.2...v3.2.3) (2023-12-15)
+
+
+### Bug Fixes
+
+* command hangs ([398a07b](https://github.com/geekdada/surgio/commit/398a07bc1682955cd864853da9f214ed91223364))
+* remote snippets containing `IP-ASN` with `no-resolve` ([1b00a6c](https://github.com/geekdada/surgio/commit/1b00a6cc06f2d6b327551d2ab2e45142debc228d))
+
+
+### Features
+
+* **getLoonNodes:**  trojan support tfo and upd params ([c70581a](https://github.com/geekdada/surgio/commit/c70581a69be02c42ba078cfdb7dd0726086f9734))
+
+
+
+## [3.2.2](https://github.com/geekdada/surgio/compare/v3.2.1...v3.2.2) (2023-11-05)
+
+
+### Bug Fixes
+
+* 上一个版本节点层级的客户端配置不生效 ([392d090](https://github.com/geekdada/surgio/commit/392d0904657d7b32af57ccca75fcc79bf3b4e809))
+
+
+
+## [3.2.1](https://github.com/geekdada/surgio/compare/v3.2.0...v3.2.1) (2023-11-04)
+
+
+### Features
+
+* remove internal relay service ([88227d0](https://github.com/geekdada/surgio/commit/88227d0cba40296640997f8856b7155eb0ec6258))
+* 优化了不同 Clash 核心的 Hysteria 密码兼容性问题 ([6f95489](https://github.com/geekdada/surgio/commit/6f954892b912ee5c50eaf8b7785a6d262c159cc9))
+
+
+
+# [3.2.0](https://github.com/geekdada/surgio/compare/v3.1.0...v3.2.0) (2023-10-28)
+
+
+### Features
+
+* 新增判断 UserAgent 的工具方法 ([9a8d0f0](https://github.com/geekdada/surgio/commit/9a8d0f026cd72e3ce3aeee3f9566d19dd5c01733))
+
+
+
+# [3.1.0](https://github.com/geekdada/surgio/compare/v3.0.2...v3.1.0) (2023-10-14)
+
+
+### Features
+
+* 支持 Hysteria 2 ([0603add](https://github.com/geekdada/surgio/commit/0603add012d07a37afb82dcb38f54a978a8395f6))
+
+
+
+## [3.0.2](https://github.com/geekdada/surgio/compare/v3.0.1...v3.0.2) (2023-07-08)
+
+
+### Bug Fixes
+
+* Surge Wireguard 节点某些配置不生效的问题 ([30df8f9](https://github.com/geekdada/surgio/commit/30df8f945f0dc1f206e56c0aa3c5cf541665453d))
+
+
+
+## [3.0.1](https://github.com/geekdada/surgio/compare/v3.0.0...v3.0.1) (2023-06-26)
+
+
+### Bug Fixes
+
+* forgot to include tuicFilter in template rendering context ([e141c0a](https://github.com/geekdada/surgio/commit/e141c0a27b7278515bc2db5876e4fa821fc74dfc))
+
+
+
+# [3.0.0](https://github.com/geekdada/surgio/compare/v3.0.0-beta.1...v3.0.0) (2023-06-24)
+
+
+
+# [3.0.0-beta.1](https://github.com/geekdada/surgio/compare/v3.0.0-alpha.7...v3.0.0-beta.1) (2023-06-21)
+
+
+### Bug Fixes
+
+* use new cache prefix ([2a5fa34](https://github.com/geekdada/surgio/commit/2a5fa34cf5116b923ece09ca0c264014f98207fd))
+
+
+### Features
+
+* add new cache key ([4eec1b6](https://github.com/geekdada/surgio/commit/4eec1b6a5832a7fc80c8c1c6910906909a5a0982))
+* new env SURGIO_RENDERED_ARTIFACT_CACHE_MAXAGE ([0be992d](https://github.com/geekdada/surgio/commit/0be992dcfb727ea7d4d7f7e9ba4a8385bd787a0b))
+
+
+
+# [3.0.0-alpha.7](https://github.com/geekdada/surgio/compare/v3.0.0-alpha.6...v3.0.0-alpha.7) (2023-06-19)
+
+
+### Bug Fixes
+
+* alterId shoud accept a number ([866b6cf](https://github.com/geekdada/surgio/commit/866b6cf2062d698f5c9911e9a07f33612b910cf8))
+* 在模板中提供以下： ([6a4a728](https://github.com/geekdada/surgio/commit/6a4a728d7be3b9ca05dde8fea147b1dd511e9cc2))
+
+
+
+# [3.0.0-alpha.6](https://github.com/geekdada/surgio/compare/v3.0.0-alpha.5...v3.0.0-alpha.6) (2023-06-18)
+
+
+### Bug Fixes
+
+* 多个 peer 的 Wireguard 节点在 Surge 上的格式问题 ([17ec9c9](https://github.com/geekdada/surgio/commit/17ec9c93f3fa0b52acc1628f27c086dbb9e66bec))
+
+
+### Features
+
+* cache.wrap ([c34d661](https://github.com/geekdada/surgio/commit/c34d661903c913a473beb1a60ee02077ca8328d9))
+
+
+
+# [3.0.0-alpha.5](https://github.com/geekdada/surgio/compare/v3.0.0-alpha.4...v3.0.0-alpha.5) (2023-06-17)
+
+
+### Bug Fixes
+
+* wireguard for clash ([68e3e98](https://github.com/geekdada/surgio/commit/68e3e98af878ede032f85caa1499eea1e843bcb6))
+
+
+### Features
+
+* unify cache interface ([dc24a9b](https://github.com/geekdada/surgio/commit/dc24a9b6db50d70698243a17740f0a001b2bdb28))
+
+
+
+# [3.0.0-alpha.4](https://github.com/geekdada/surgio/compare/v3.0.0-alpha.3...v3.0.0-alpha.4) (2023-06-15)
+
+
+### Features
+
+* support Surge tuic-v5 format ([bedff82](https://github.com/geekdada/surgio/commit/bedff827094fdc68e106967be4237ed22afbcf5e))
+
+
+
+# [3.0.0-alpha.3](https://github.com/geekdada/surgio/compare/v3.0.0-alpha.2...v3.0.0-alpha.3) (2023-06-15)
+
+
+### Bug Fixes
+
+* dependency ([3636a4c](https://github.com/geekdada/surgio/commit/3636a4c27e46280c9ed6ea785b9e05f1bfd8f8dc))
+
+
+
+# [3.0.0-alpha.2](https://github.com/geekdada/surgio/compare/v3.0.0-alpha.1...v3.0.0-alpha.2) (2023-06-15)
+
+
+### Bug Fixes
+
+* dependency ([e2791de](https://github.com/geekdada/surgio/commit/e2791de615060b57f5f563a3b76a28b70cc5eecc))
+
+
+
+# [3.0.0-alpha.1](https://github.com/geekdada/surgio/compare/v3.0.0-alpha.0...v3.0.0-alpha.1) (2023-06-15)
+
+
+### Bug Fixes
+
+* port and version validation ([9c6c516](https://github.com/geekdada/surgio/commit/9c6c51684e6ec7ecd2ac9c1fda96ffb94bde5d6c))
+* port validation ([0183428](https://github.com/geekdada/surgio/commit/0183428e830dd4899a3e2b93b221be5b51081d8d))
+* snell version validation ([8af5aaf](https://github.com/geekdada/surgio/commit/8af5aaf5318f67c12d212165f81d93e170e5333a))
+
+
+### Features
+
+* improve error logs ([a695a5e](https://github.com/geekdada/surgio/commit/a695a5ea0bef53a32e32aed6d3b77a83e27b3f30))
+* make sure properties of customParams are consistent ([e39692c](https://github.com/geekdada/surgio/commit/e39692c2417e2e1a3c6ca5adcdc2d3e5a64d8f3e))
+
+
+
+# [3.0.0-alpha.0](https://github.com/geekdada/surgio/compare/v2.25.0...v3.0.0-alpha.0) (2023-05-31)
+
+
+### Features
+
+* add tuic v5 support ([39b5c94](https://github.com/geekdada/surgio/commit/39b5c940bd93c5a99537324eea03556c70bebdd3))
+* address compatibility issues ([ceaecb4](https://github.com/geekdada/surgio/commit/ceaecb48082c60928f4b3a8f45611fcdb922806f))
+* apply changes in [#226](https://github.com/geekdada/surgio/issues/226) ([3dd0135](https://github.com/geekdada/surgio/commit/3dd01358f0b1685f24ee397653eab70b16afb4c7))
+* defineProvider 和 defineSurgioConfig ([ac81dc4](https://github.com/geekdada/surgio/commit/ac81dc4722f906dd0594d11ec5b0c3c5fb412e34))
+* nodeConfig no longer has kebab naming properties ([43ea656](https://github.com/geekdada/surgio/commit/43ea656c5f53ff45776d76b620ee2e2547577ab6))
+* re-organize package ([ea60904](https://github.com/geekdada/surgio/commit/ea60904554efa5d4560c397f60fdf8d567cadd13))
+* remove all deprecated features ([7d76184](https://github.com/geekdada/surgio/commit/7d7618488bd83f719fbd2b63de078037df4b1981))
+* reverseFilter and mergeReversedFilters ([5f643f6](https://github.com/geekdada/surgio/commit/5f643f684ef7311c8c0898343347f3e6ff1237d1))
+* use mocha to test the CLI ([6ee4f93](https://github.com/geekdada/surgio/commit/6ee4f9331901c7874958a7d6194eecd7999e40e4))
+* use zod to validate node configurations ([ab1d7fe](https://github.com/geekdada/surgio/commit/ab1d7fe1274ec3842b4d20dbe5a2b6be23396c2d))
+* 优化 filter ([31c6fb2](https://github.com/geekdada/surgio/commit/31c6fb2bdfd0970a0cbf60fbb9c2475cd3537dd5))
+* 优化 get*NodeNames ([53672ca](https://github.com/geekdada/surgio/commit/53672ca9c379d83843e501150f3263860d99ce5f))
+* 支持多 Peer 配置 ([9756a73](https://github.com/geekdada/surgio/commit/9756a73f37f0371449f58785de42fc167adb78cc))
+* 支持新版 Surge ([1103933](https://github.com/geekdada/surgio/commit/11039337a97b209323ec759bf132c958beda93b5))
+* 新增 getSurgeWireguardNodes ([ac68299](https://github.com/geekdada/surgio/commit/ac682993daf572fcb7ec77613b626c731c22b50f))
+* 新的模板方法 ([dd8cc7b](https://github.com/geekdada/surgio/commit/dd8cc7b55cd036b7f82639efc54443593e711f8c))
+* 细化 getNodeNames；增加 Clash 的 shadow-tls 和 Wireguard 支持 ([1d477e6](https://github.com/geekdada/surgio/commit/1d477e6fe104ad1f23d6159eafedfc4530f26113))
+
+
+
+# [2.25.0](https://github.com/geekdada/surgio/compare/v2.24.1...v2.25.0) (2023-02-12)
+
+
+### Features
+
+* add `underlyingProxy` support to `provider` ([7beca7c](https://github.com/geekdada/surgio/commit/7beca7ca451cbb058fafa53f3282d9403bb97d7c))
+* add tuicFilter ([1dbac5f](https://github.com/geekdada/surgio/commit/1dbac5fa0afaf69c84aa98a3ba82d5f5c365650f))
+* support underlyingProxy in CustomProvider ([754982c](https://github.com/geekdada/surgio/commit/754982ca7b295c9ff3150a9cf4c007ba71d840dc))
+
+
+
+## [2.24.1](https://github.com/geekdada/surgio/compare/v2.24.0...v2.24.1) (2022-12-31)
+
+
+
+# [2.24.0](https://github.com/geekdada/surgio/compare/v2.23.0...v2.24.0) (2022-11-30)
+
+
+### Bug Fixes
+
+* fixes [#210](https://github.com/geekdada/surgio/issues/210) ([fda604a](https://github.com/geekdada/surgio/commit/fda604ae3ea730bcce2af9a25c1e1fb9f3732868))
+
+
+### Features
+
+* add new config for surge ([509ab5a](https://github.com/geekdada/surgio/commit/509ab5a69fd41c3f8fb98b8469c33676593741f9))
+
+
+
+# [2.23.0](https://github.com/geekdada/surgio/compare/v2.22.1...v2.23.0) (2022-10-21)
+
+
+### Features
+
+* add SURGIO_GFW_FREE environment variable ([2aaf242](https://github.com/geekdada/surgio/commit/2aaf242e92edfdc3bdebe4698d922943791d5160))
+* add Tuic support for Clash (Stash) and Surge ([5bf51a6](https://github.com/geekdada/surgio/commit/5bf51a6869b46cf51fc8f693812556986581303e))
+
+
+
+## [2.22.1](https://github.com/geekdada/surgio/compare/v2.22.0...v2.22.1) (2022-10-05)
+
+
+### Reverts
+
+* revert netlify setup ([c0c7d8a](https://github.com/geekdada/surgio/commit/c0c7d8a2539a47840fc0f4c3fb84aff0bda79b71))
+
+
+
+# [2.22.0](https://github.com/geekdada/surgio/compare/v2.21.0...v2.22.0) (2022-10-04)
+
+
+### Bug Fixes
+
+* vuepress ([03acecf](https://github.com/geekdada/surgio/commit/03acecf4131ce316bd9ce20c0e4643e6679d7e7c))
+
+
+### Features
+
+* support getSurfboardNodes and surfboard vmess aead config ([4099f98](https://github.com/geekdada/surgio/commit/4099f988d019c3e7ab2fcbfe2313978fb353dfac))
+* support surfboard rule format ([b7abfb2](https://github.com/geekdada/surgio/commit/b7abfb229466ceca8682f12acfb54a44c78805b7))
+
+
+
+# [2.21.0](https://github.com/geekdada/surgio/compare/v2.20.1...v2.21.0) (2022-10-03)
+
+
+### Features
+
+* support QuantumultX server_check_url ([0919d00](https://github.com/geekdada/surgio/commit/0919d0045604910a069b3482168394d9a140ce46))
+
+
+
+## [2.20.1](https://github.com/geekdada/surgio/compare/v2.20.0...v2.20.1) (2022-08-14)
+
+
+### Bug Fixes
+
+* getDownloadUrl and getUrl doesn't use viewerToken first ([c574642](https://github.com/geekdada/surgio/commit/c574642d81c7f620550b76e5896ae1999330022e))
+
+
+
+# [2.20.0](https://github.com/geekdada/surgio/compare/v2.20.0-0...v2.20.0) (2022-06-30)
+
+
+
+# [2.20.0-0](https://github.com/geekdada/surgio/compare/v2.19.0...v2.20.0-0) (2022-06-29)
+
+
+### Features
+
+* 支持 viewerToken 的配置 ([d7a74da](https://github.com/geekdada/surgio/commit/d7a74dafe83eed1a4977fb8206e0c3001eb2fc62))
+
+
+
+# [2.19.0](https://github.com/geekdada/surgio/compare/v2.19.0-1...v2.19.0) (2022-06-12)
+
+
+### Features
+
+* useGlob, discardGlob ([119bdeb](https://github.com/geekdada/surgio/commit/119bdeb449cf23ebb0c3c00b54a506378263ddf8))
+
+
+
+# [2.19.0-1](https://github.com/geekdada/surgio/compare/v2.19.0-0...v2.19.0-1) (2022-05-28)
+
+
+### Bug Fixes
+
+* hygen dependency ([75a8ac4](https://github.com/geekdada/surgio/commit/75a8ac458e8547e9d8b575d5813ad796b67445ee))
+
+
+
+# [2.19.0-0](https://github.com/geekdada/surgio/compare/v2.18.4...v2.19.0-0) (2022-05-28)
+
+
+### Features
+
+* support Redis cache ([7d1ae46](https://github.com/geekdada/surgio/commit/7d1ae460f1466d0f4058c83db67fa176b1fba915))
+
+
+
+## [2.18.4](https://github.com/geekdada/surgio/compare/v2.18.3...v2.18.4) (2022-05-26)
+
+
+### Bug Fixes
+
+* flag_cn.ts ([483c5b8](https://github.com/geekdada/surgio/commit/483c5b8e8134ba272597f9f1b2aa4e07783689ca))
+
+
+
+## [2.18.3](https://github.com/geekdada/surgio/compare/v2.18.2...v2.18.3) (2022-05-21)
+
+
+### Bug Fixes
+
+* flag.test.ts ([52e23d0](https://github.com/geekdada/surgio/commit/52e23d09134a5c2ced2ec669fbad87636b12503c))
+
+
+### Features
+
+* Update flag_cn.ts ([478d694](https://github.com/geekdada/surgio/commit/478d6944a388727428cfd53f4fedf0134676fa94))
+
+
+
+## [2.18.2](https://github.com/geekdada/surgio/compare/v2.18.1...v2.18.2) (2022-04-16)
+
+
+### Bug Fixes
+
+* wrong Trojan WSS config format for Quantumult X ([e953288](https://github.com/geekdada/surgio/commit/e953288911b62beeb0c431b53b4b28e72ce672d0))
+
+
+
+## [2.18.1](https://github.com/geekdada/surgio/compare/v2.18.0...v2.18.1) (2022-04-15)
+
+
+### Bug Fixes
+
+* 流量查询工作不正常 ([95ea0dc](https://github.com/geekdada/surgio/commit/95ea0dc509c45bd9f5bf310795ce00cdf4942552))
+
+
+
+# [2.18.0](https://github.com/geekdada/surgio/compare/v2.17.0...v2.18.0) (2022-04-13)
+
+
+### Features
+
+* support assign an user agent string to providers ([22ceb5d](https://github.com/geekdada/surgio/commit/22ceb5d4eb7845044313675c54a9676cef091962))
+
+
+
+# [2.17.0](https://github.com/geekdada/surgio/compare/v2.16.0...v2.17.0) (2022-04-10)
+
+
+### Features
+
+* add useragent support ([a7ee722](https://github.com/geekdada/surgio/commit/a7ee72290f6d55e29d3c0c269abc61acc2cb2bfc))
+
+
+
+# [2.16.0](https://github.com/geekdada/surgio/compare/v2.15.0...v2.16.0) (2022-03-19)
+
+
+### Features
+
+* format wsHeaders keys ([5c745fe](https://github.com/geekdada/surgio/commit/5c745fe1ff143e99b2ca6559e96c8969c8aad32d))
+* support trojan websocket for loon ([63e66d6](https://github.com/geekdada/surgio/commit/63e66d612a6ce9f68bc2d0dfa6b0b616e00a548d))
+* support trojan WebSocket for quantumultx generating ([5ded7b0](https://github.com/geekdada/surgio/commit/5ded7b01a246c4c2709087ef9e2734af554a839c))
+
+
+
+# [2.15.0](https://github.com/geekdada/surgio/compare/v2.14.2...v2.15.0) (2022-03-18)
+
+
+### Features
+
+* add support for trojan web-socket config ([394f65d](https://github.com/geekdada/surgio/commit/394f65d927e3e8bae6237bea3bf3f2c644ed1a63))
+* add tls-verification to quantumult x vmess config ([b24f071](https://github.com/geekdada/surgio/commit/b24f071f46a71a8446bd097d2c286b5011cb163b))
+
+
+
+## [2.14.2](https://github.com/geekdada/surgio/compare/v2.14.1...v2.14.2) (2022-01-13)
+
+
+### Bug Fixes
+
+* encrypt-method=auto in Surge config ([4693bd4](https://github.com/geekdada/surgio/commit/4693bd4319bb6a0de172c0f9c4859f79792b915a))
+
+
+
+## [2.14.1](https://github.com/geekdada/surgio/compare/v2.14.0...v2.14.1) (2022-01-12)
+
+
+### Features
+
+* re-enable Vmess AEAD on Surge ([602d999](https://github.com/geekdada/surgio/commit/602d9997cd3548631527631d8502f16a131c40dd))
+
+
+
+# [2.14.0](https://github.com/geekdada/surgio/compare/v2.13.1...v2.14.0) (2022-01-11)
+
+
+### Features
+
+* add support for QuantumultX vmess AEAD config ([1e02c49](https://github.com/geekdada/surgio/commit/1e02c4917f740d9691d496a66d574669533d1091))
+
+
+
+## [2.13.1](https://github.com/geekdada/surgio/compare/v2.13.0...v2.13.1) (2022-01-11)
+
+
+### Bug Fixes
+
+* back compatibility with Gateway ([39b266e](https://github.com/geekdada/surgio/commit/39b266e264926c71fa4fc37d30bda9ffcf4fd45d))
+
+
+
+# [2.13.0](https://github.com/geekdada/surgio/compare/v2.12.0...v2.13.0) (2022-01-10)
+
+
+### Features
+
+* support surge vmess aead config ([628b999](https://github.com/geekdada/surgio/commit/628b99919b695c95d2d3e455ec955166155d3d33))
+
+
+
+# [2.12.0](https://github.com/geekdada/surgio/compare/v2.11.0...v2.12.0) (2022-01-09)
+
+
+### Features
+
+* support new clash config format for vmess ([a3502bb](https://github.com/geekdada/surgio/commit/a3502bb6be259a54684536b1d3ea9e1cde27a622))
+
+
+
+# [2.11.0](https://github.com/geekdada/surgio/compare/v2.10.3...v2.11.0) (2022-01-01)
+
+
+### Features
+
+* parse shadowsocks in V2rayN subscription ([e26fe15](https://github.com/geekdada/surgio/commit/e26fe154f4f9276c767270e28932210eb643222c)), closes [#167](https://github.com/geekdada/surgio/issues/167)
+* support trojan subscription ([e241f4b](https://github.com/geekdada/surgio/commit/e241f4b1679006f90c20ec17b755de27bd6a4cf3))
+* support trojan subscription ([75a90c4](https://github.com/geekdada/surgio/commit/75a90c4fb8867a870d3dc22d8ca9832e7ab1c2df))
+
+
+
+## [2.10.3](https://github.com/geekdada/surgio/compare/v2.10.2...v2.10.3) (2021-11-24)
+
+
+
 ## [2.10.2](https://github.com/geekdada/surgio/compare/v2.10.1...v2.10.2) (2021-10-24)
 
 
@@ -82,8 +755,8 @@
 
 ### Features
 
-* 调整了 dns 解析的参数 ([b7aa7eb](https://github.com/geekdada/surgio/commit/b7aa7ebf7b0bd71c85395fea0fc4c1295bbd84bc))
 * 在生成 surge 的 ssr 订阅时强制校验 startPort ([879080b](https://github.com/geekdada/surgio/commit/879080b333d89aa7d37ebe6e646d78f71aa69af7))
+* 调整了 dns 解析的参数 ([b7aa7eb](https://github.com/geekdada/surgio/commit/b7aa7ebf7b0bd71c85395fea0fc4c1295bbd84bc))
 
 
 
@@ -197,9 +870,9 @@
 
 ### Features
 
-* 清除缓存命令 ([4daaf1c](https://github.com/geekdada/surgio/commit/4daaf1cbd678ba65907e16dbfeb7c0aacf2d5cc2))
 * 允许通过命令行开启远程片段缓存 ([128c9c5](https://github.com/geekdada/surgio/commit/128c9c5998dcc8db9d4c9472ce451ff40f4732ee))
 * 支持自定义订阅请求转发的地址 ([3f4fb3b](https://github.com/geekdada/surgio/commit/3f4fb3b7450e3e63d89d26b4dfcba7dffd1e683e))
+* 清除缓存命令 ([4daaf1c](https://github.com/geekdada/surgio/commit/4daaf1cbd678ba65907e16dbfeb7c0aacf2d5cc2))
 
 
 
@@ -324,13 +997,13 @@
 
 ### Features
 
-* 内置协议过滤器更名 ([6aa6531](https://github.com/geekdada/surgio/commit/6aa653174fd856c1ccc69ba10f5b995391ef9c82))
-* 修改默认网络请求超时时间和重试次数 ([7753d20](https://github.com/geekdada/surgio/commit/7753d20611be1a4066747b3281d1ceb99a687ec1))
 * add support for ssd subscription ([46e5d2d](https://github.com/geekdada/surgio/commit/46e5d2d129b9b5470471594c432e8b5e2fc012ca))
 * filter 行为修改 ([9e0ddf7](https://github.com/geekdada/surgio/commit/9e0ddf7118931009951dc1f21943d3340256885d))
 * surgeconfig 默认值修改 ([7b004bd](https://github.com/geekdada/surgio/commit/7b004bd1cac6c490bd0dbb0c086f33ff85ac194e))
 * udp-relay 改为强制布尔值 ([86a5dfc](https://github.com/geekdada/surgio/commit/86a5dfcb2343bff5dbfafd6cefe2057b2141c66e))
 * Vmess 配置的 udp 改为 udp-relay ([9460bc8](https://github.com/geekdada/surgio/commit/9460bc8c1713a96fc61e4db271e599046d467830))
+* 修改默认网络请求超时时间和重试次数 ([7753d20](https://github.com/geekdada/surgio/commit/7753d20611be1a4066747b3281d1ceb99a687ec1))
+* 内置协议过滤器更名 ([6aa6531](https://github.com/geekdada/surgio/commit/6aa653174fd856c1ccc69ba10f5b995391ef9c82))
 
 
 ### BREAKING CHANGES
@@ -349,8 +1022,8 @@
 
 ### Bug Fixes
 
-* 配置 boolean 进行严格类型检查 ([1a42306](https://github.com/geekdada/surgio/commit/1a42306e5387b52b4a7f976b53b352c556607512))
 * **utils:v2ray:** lack of transport settings ([4491e60](https://github.com/geekdada/surgio/commit/4491e60cb5e0709056d93c82d314d23ec482745a)), closes [#91](https://github.com/geekdada/surgio/issues/91)
+* 配置 boolean 进行严格类型检查 ([1a42306](https://github.com/geekdada/surgio/commit/1a42306e5387b52b4a7f976b53b352c556607512))
 
 
 ### Features
@@ -441,16 +1114,16 @@
 
 ### Bug Fixes
 
-* 服务器地址为 ipv6 时触发解析 ([aa79c93](https://github.com/geekdada/surgio/commit/aa79c931bac1a81b2406e4c36180c62e064e0292))
 * **command:new:** 生成 custom 类型 provider 报错 ([be83268](https://github.com/geekdada/surgio/commit/be832687b0cb1a5ceb96e6742eb451e9ed5e5903))
 * SSR URI 中包含 ipv6 地址解析错误 ([1cd8436](https://github.com/geekdada/surgio/commit/1cd8436a6335a4f018fc96532f297502cec8ce3b))
+* 服务器地址为 ipv6 时触发解析 ([aa79c93](https://github.com/geekdada/surgio/commit/aa79c931bac1a81b2406e4c36180c62e064e0292))
 
 
 ### Features
 
-* 生成规则前进行 eslint 检查 ([a769458](https://github.com/geekdada/surgio/commit/a769458225905b228ef8903da593ded2c42ab49d))
 * 支持解析 ipv6 地址 ([b96489b](https://github.com/geekdada/surgio/commit/b96489b6f92daa9e87f3863fb80e97b4af225fa6))
 * 支持转换 surge ip-cidr6 至 quantumult x ip6-cidr ([c823677](https://github.com/geekdada/surgio/commit/c82367707e21ecd6856801a0e0d1758e58338a03))
+* 生成规则前进行 eslint 检查 ([a769458](https://github.com/geekdada/surgio/commit/a769458225905b228ef8903da593ded2c42ab49d))
 
 
 
@@ -464,11 +1137,11 @@
 
 ### Features
 
-* 错误信息补充 ([ef4946c](https://github.com/geekdada/surgio/commit/ef4946cac0eb9897586875118399624dbe44d8d9))
-* 更新内置默认 UA ([640ee2c](https://github.com/geekdada/surgio/commit/640ee2cddd392a97b61b9c5511335075bdb1b0ca))
+* useProviders 和 discardProviders 增加严格模式 ([bcd9fe9](https://github.com/geekdada/surgio/commit/bcd9fe942b9814ae453f4f13103245f8bf32384c))
 * 优化未设置 binPath 的错误文案 ([f6d3e89](https://github.com/geekdada/surgio/commit/f6d3e895e783788c5f8b8bcf1622220f411b3e9a))
 * 支持从 Clash 订阅中读取 v2ray-plugin mux 信息 ([f06f279](https://github.com/geekdada/surgio/commit/f06f2793af92f2a68aca51e461cad2c6b9165f5d))
-* useProviders 和 discardProviders 增加严格模式 ([bcd9fe9](https://github.com/geekdada/surgio/commit/bcd9fe942b9814ae453f4f13103245f8bf32384c))
+* 更新内置默认 UA ([640ee2c](https://github.com/geekdada/surgio/commit/640ee2cddd392a97b61b9c5511335075bdb1b0ca))
+* 错误信息补充 ([ef4946c](https://github.com/geekdada/surgio/commit/ef4946cac0eb9897586875118399624dbe44d8d9))
 
 
 
@@ -495,8 +1168,8 @@
 
 ### Bug Fixes
 
-* 无法识别外部资源的 EOL ([bee0c12](https://github.com/geekdada/surgio/commit/bee0c1224781330c35a27cbfee4549d338de65d2))
 * should not enable proxy on now.sh and heroku ([3713850](https://github.com/geekdada/surgio/commit/37138507c126d7b2da900c833fea2af0bf153f4d))
+* 无法识别外部资源的 EOL ([bee0c12](https://github.com/geekdada/surgio/commit/bee0c1224781330c35a27cbfee4549d338de65d2))
 
 
 ### Features
@@ -528,8 +1201,8 @@
 
 ### Features
 
-* 支持定义全局 customParams ([a8a092f](https://github.com/geekdada/surgio/commit/a8a092fc74c5fbb7fedaa3a00dbffe2f3e9e9432))
 * add template method getUrl ([d02df8f](https://github.com/geekdada/surgio/commit/d02df8f2dbac0722381832944e06a11a3b0f3b40))
+* 支持定义全局 customParams ([a8a092f](https://github.com/geekdada/surgio/commit/a8a092fc74c5fbb7fedaa3a00dbffe2f3e9e9432))
 
 
 
@@ -548,8 +1221,8 @@
 ### Features
 
 * `v2rayn_subscribe` 支持强制覆盖 `skipCertVerify` 和 `udpRelay` ([3a326d4](https://github.com/geekdada/surgio/commit/3a326d463f47bba6a000d299eb1dee19d790e29c))
-* 支持从 Surge 配置中解析转换 Quantumult X 的以下几种脚本 ([066060d](https://github.com/geekdada/surgio/commit/066060d3d26b6f0172c568897fc492a77ccfcfb9))
 * add support for quantumultx tls1.3 ([007db56](https://github.com/geekdada/surgio/commit/007db568c2a9ac7685bd0a344fa5093c22429e81))
+* 支持从 Surge 配置中解析转换 Quantumult X 的以下几种脚本 ([066060d](https://github.com/geekdada/surgio/commit/066060d3d26b6f0172c568897fc492a77ccfcfb9))
 
 
 
@@ -581,8 +1254,8 @@
 
 ### Features
 
-* 更新模板生成工具 ([fd8eed0](https://github.com/geekdada/surgio/commit/fd8eed0b0f527698ec203f347d7bbdae397ee897))
 * add a relay service for subscriptions ([4b789a8](https://github.com/geekdada/surgio/commit/4b789a89f1cf68ce978d0fecd58daaf82f4a039a))
+* 更新模板生成工具 ([fd8eed0](https://github.com/geekdada/surgio/commit/fd8eed0b0f527698ec203f347d7bbdae397ee897))
 
 
 
@@ -641,9 +1314,9 @@
 
 ### Features
 
+* 支持为 mellow 输出 ss uri ([c26cdb5](https://github.com/geekdada/surgio/commit/c26cdb552a882cc7e29448cd0a1129c25a9bccc7))
 * 支持加入自定义 trojan 节点 ([40b6714](https://github.com/geekdada/surgio/commit/40b67143fbf1f5e59cf5c4b08ef4eb62238f4678))
 * 支持检查模板方法中无效的 filter ([9c2690b](https://github.com/geekdada/surgio/commit/9c2690b31d9266833e45c892fdad4daca6ce947e))
-* 支持为 mellow 输出 ss uri ([c26cdb5](https://github.com/geekdada/surgio/commit/c26cdb552a882cc7e29448cd0a1129c25a9bccc7))
 
 
 
@@ -707,12 +1380,12 @@
 
 ### Features
 
+* Artifact 初始化后返回实例 ([7ca04cf](https://github.com/geekdada/surgio/commit/7ca04cfb07fa308abd90f475b1bd35ce58d183df))
 * 为常用 Provider 类型增加订阅流量信息接口 ([ed68cab](https://github.com/geekdada/surgio/commit/ed68cab12a5417850229acbfa564a4436577e5cb))
 * 修改 Artifact 初始化接口 ([4c3ac84](https://github.com/geekdada/surgio/commit/4c3ac847adae2bb492fa851e53b12213a6e379c7))
 * 增加查询流量命令 ([a94eeab](https://github.com/geekdada/surgio/commit/a94eeab89b0a0c3432af2f9796d44e700084b93c))
 * 支持从 SSR 订阅中读取剩余流量 ([fb2e886](https://github.com/geekdada/surgio/commit/fb2e886cac5428cdfac49bd6696a68e2494c2ea1))
 * 支持在 Artifact 初始化时传入 Environment ([75ae51f](https://github.com/geekdada/surgio/commit/75ae51f3e9fafddade282d4348cbbcb9db774d36))
-* Artifact 初始化后返回实例 ([7ca04cf](https://github.com/geekdada/surgio/commit/7ca04cfb07fa308abd90f475b1bd35ce58d183df))
 
 
 
@@ -721,8 +1394,8 @@
 
 ### Bug Fixes
 
-* 某些情况下 v2ray 配置 port 为字符串 ([b8af4d7](https://github.com/geekdada/surgio/commit/b8af4d799d70d02c5b4361954f38625afd891973)), closes [#59](https://github.com/geekdada/surgio/issues/59)
 * external provider 的 addresses 参数只应该写 IP ([f7006d6](https://github.com/geekdada/surgio/commit/f7006d676317db5eb0b6aac66440f9a76f7d8db4))
+* 某些情况下 v2ray 配置 port 为字符串 ([b8af4d7](https://github.com/geekdada/surgio/commit/b8af4d799d70d02c5b4361954f38625afd891973)), closes [#59](https://github.com/geekdada/surgio/issues/59)
 
 
 ### Features
@@ -797,9 +1470,9 @@
 
 ### Features
 
+* useProviders, discardProviders ([e11cb75](https://github.com/geekdada/surgio/commit/e11cb75d3d58189e9dacc2c4f699e514ab1a33c1)), closes [#51](https://github.com/geekdada/surgio/issues/51)
 * 支持 Clash 的 Provider 片段 ([5c42328](https://github.com/geekdada/surgio/commit/5c4232809e60514121c1579deaa8ce9dbd151323))
 * 支持新的 Clash 规则配置方法 ([48b90e1](https://github.com/geekdada/surgio/commit/48b90e142dcd5c200ddd1b1e4cae8b6e97d918bb))
-* useProviders, discardProviders ([e11cb75](https://github.com/geekdada/surgio/commit/e11cb75d3d58189e9dacc2c4f699e514ab1a33c1)), closes [#51](https://github.com/geekdada/surgio/issues/51)
 
 
 
@@ -817,18 +1490,18 @@
 
 ### Bug Fixes
 
-* 在 external 中开启 tfo 和 mptcp 是没有意义的 ([8b0e6f0](https://github.com/geekdada/surgio/commit/8b0e6f07b35da4a6d0ab7164c1dd572e387b8b90))
 * broken test ([25fcde6](https://github.com/geekdada/surgio/commit/25fcde69365ca66dfcce3fe260a1c6e2d0bd57b3))
 * LRU 缓存可能会被污染 ([929f7bd](https://github.com/geekdada/surgio/commit/929f7bd3a32adc40eb23ec782eba1ce2978569d8))
 * Provider 组合后生成结果排序错乱 ([d051b28](https://github.com/geekdada/surgio/commit/d051b2851ff401038587baa88f0e5ddc134471bc))
+* 在 external 中开启 tfo 和 mptcp 是没有意义的 ([8b0e6f0](https://github.com/geekdada/surgio/commit/8b0e6f07b35da4a6d0ab7164c1dd572e387b8b90))
 
 
 ### Features
 
+* v2ray-plugin 强制输出 mux: false ([ba635c5](https://github.com/geekdada/surgio/commit/ba635c599065a88d5ba9d0fcd94a1f4939140da1))
 * 域名解析失败后跳过 ([66f5af8](https://github.com/geekdada/surgio/commit/66f5af8d31416591a29e28ac8ae03d978fa50862))
 * 支持从 Clash 订阅中读取 skipCertVerify ([c856731](https://github.com/geekdada/surgio/commit/c856731cec14246b1ced594627daa5c50a2959cd))
 * 支持配置 Provider 缓存 ([16dc8fc](https://github.com/geekdada/surgio/commit/16dc8fce9911fee2cae2e8c12e8649d3ede44dfa))
-* v2ray-plugin 强制输出 mux: false ([ba635c5](https://github.com/geekdada/surgio/commit/ba635c599065a88d5ba9d0fcd94a1f4939140da1))
 
 
 
@@ -851,9 +1524,9 @@
 
 ### Features
 
+* 支持修改节点名 ([4437f0e](https://github.com/geekdada/surgio/commit/4437f0e628d13ae5f675b04aa0b7e44b66bc37a7))
 * 更新 netflixFilter ([515cbe5](https://github.com/geekdada/surgio/commit/515cbe5a179f6a7a364dc4e0eba72f264fb82b57))
 * 更新国旗数据库 ([18f22d2](https://github.com/geekdada/surgio/commit/18f22d213e90fc9f680323439cbe4082ea2b171b))
-* 支持修改节点名 ([4437f0e](https://github.com/geekdada/surgio/commit/4437f0e628d13ae5f675b04aa0b7e44b66bc37a7))
 
 
 
@@ -871,8 +1544,8 @@
 
 ### Bug Fixes
 
-* 在某些情况下 Clash 的策略组中没输出 url 和 interval ([3884014](https://github.com/geekdada/surgio/commit/3884014c2296a59de90ae5f5e4803a3609f7893d))
 * broken test ([794be85](https://github.com/geekdada/surgio/commit/794be85268811ab665351ab255f368bc4a6d0754))
+* 在某些情况下 Clash 的策略组中没输出 url 和 interval ([3884014](https://github.com/geekdada/surgio/commit/3884014c2296a59de90ae5f5e4803a3609f7893d))
 
 
 
@@ -989,9 +1662,9 @@
 
 ### Features
 
-* 网关 get-artifact 支持直接输出 surge 和 qx 的节点列表 ([97f78c4](https://github.com/geekdada/surgio/commit/97f78c49ba3eeb050361807e2cbbfc44523f0804))
 * 优化 dns 解析 ([345790e](https://github.com/geekdada/surgio/commit/345790eecd6b2f4745b91999004d921f41b259bc))
 * 在模板中输出 proxyTestUrl ([b95cd8b](https://github.com/geekdada/surgio/commit/b95cd8b157e902a920699618cf1e61d1f615fd31))
+* 网关 get-artifact 支持直接输出 surge 和 qx 的节点列表 ([97f78c4](https://github.com/geekdada/surgio/commit/97f78c49ba3eeb050361807e2cbbfc44523f0804))
 
 
 
@@ -1000,16 +1673,16 @@
 
 ### Bug Fixes
 
-* 空文件不会返回 404 ([271c398](https://github.com/geekdada/surgio/commit/271c398df29e8e3da2f4f22d6aa2d78aa49f122c))
 * 某些情况下 clash 配置没有输出 interval 和 url ([1978429](https://github.com/geekdada/surgio/commit/197842956a96fd35b91afd77cf358c1697ac7097))
+* 空文件不会返回 404 ([271c398](https://github.com/geekdada/surgio/commit/271c398df29e8e3da2f4f22d6aa2d78aa49f122c))
 
 
 ### Features
 
-* 增加规则过滤关键词 ([128f648](https://github.com/geekdada/surgio/commit/128f64835ccde09b4b0dda54e4075dc0218fbc10))
-* 支持排序类型的过滤器 ([db69447](https://github.com/geekdada/surgio/commit/db694473b1b88e44811971fbc0cd8761d0fcf4e3))
-* 支持在输出 external 时解析域名 ([1f78f44](https://github.com/geekdada/surgio/commit/1f78f44dde2949e384184d8fa59f566a45ed2d64))
 * nodeFilter 也支持过滤排序 ([6dd7f66](https://github.com/geekdada/surgio/commit/6dd7f665d26ad427f026786d5add8c578084f816))
+* 增加规则过滤关键词 ([128f648](https://github.com/geekdada/surgio/commit/128f64835ccde09b4b0dda54e4075dc0218fbc10))
+* 支持在输出 external 时解析域名 ([1f78f44](https://github.com/geekdada/surgio/commit/1f78f44dde2949e384184d8fa59f566a45ed2d64))
+* 支持排序类型的过滤器 ([db69447](https://github.com/geekdada/surgio/commit/db694473b1b88e44811971fbc0cd8761d0fcf4e3))
 
 
 
@@ -1027,8 +1700,8 @@
 
 ### Features
 
-* 优化远程片段获取的并发请求 ([7552fa0](https://github.com/geekdada/surgio/commit/7552fa05b073871aa6a50472f2386bfa4fa9421d))
 * Provider 处理改为并发 ([8bf2738](https://github.com/geekdada/surgio/commit/8bf2738f14f9d30b9bfbf6999fbbdf91a5993469))
+* 优化远程片段获取的并发请求 ([7552fa0](https://github.com/geekdada/surgio/commit/7552fa05b073871aa6a50472f2386bfa4fa9421d))
 
 
 
@@ -1046,8 +1719,8 @@
 
 ### Bug Fixes
 
-* 由于 mellow 对 shadowsocks 支持有限，忽略该类型节点 ([8ae0561](https://github.com/geekdada/surgio/commit/8ae056194b938014eee4c0bebfb38ecf3de7cb10))
 * Close [#35](https://github.com/geekdada/surgio/issues/35) ([491b655](https://github.com/geekdada/surgio/commit/491b655bc8061ed120ab119bd5e4ac57859ea095))
+* 由于 mellow 对 shadowsocks 支持有限，忽略该类型节点 ([8ae0561](https://github.com/geekdada/surgio/commit/8ae056194b938014eee4c0bebfb38ecf3de7cb10))
 
 
 ### Features
@@ -1056,8 +1729,8 @@
 * 增加 mellow 规则处理方法 ([b646199](https://github.com/geekdada/surgio/commit/b646199507d7558bd00daa89f4877501391e2605))
 * 支持 Clash 的 'fallback-auto', 'load-balance' 策略 ([18f106f](https://github.com/geekdada/surgio/commit/18f106fee8c94c01bbf8a4a34fadfcd9557fdd2b)), closes [#34](https://github.com/geekdada/surgio/issues/34)
 * 支持单独定义某个 artifact 的输出目录 ([bef00c7](https://github.com/geekdada/surgio/commit/bef00c7d9894476c695229a6e96f1d3f47fd91b1))
-* 支持导出 Mellow 节点 ([9a72ca2](https://github.com/geekdada/surgio/commit/9a72ca2ac7b9b59ee3c1b61180fd8fe915330ad8))
 * 支持在 surgio.conf.js 中定义全局 customFilters ([1701b85](https://github.com/geekdada/surgio/commit/1701b85d68e487b52fb529243d8826ee4b5a99a8))
+* 支持导出 Mellow 节点 ([9a72ca2](https://github.com/geekdada/surgio/commit/9a72ca2ac7b9b59ee3c1b61180fd8fe915330ad8))
 
 
 
@@ -1094,8 +1767,8 @@
 
 ### Features
 
-* 面板增加添加 Clash 的按钮 ([b66e5f3](https://github.com/geekdada/surgio/commit/b66e5f31dae975ccac83742666ea7385a6e023e0))
 * check command ([2db635f](https://github.com/geekdada/surgio/commit/2db635ff91cd786daa6852abdd82896ab213f3ab))
+* 面板增加添加 Clash 的按钮 ([b66e5f3](https://github.com/geekdada/surgio/commit/b66e5f31dae975ccac83742666ea7385a6e023e0))
 
 
 
@@ -1104,8 +1777,8 @@
 
 ### Features
 
-* youtubePremiumFilter 增加香港 ([821bf3c](https://github.com/geekdada/surgio/commit/821bf3c653767490bf093e0980be091b28f3501d))
 * youtubePremiumFilter 增加新加坡 ([7b32873](https://github.com/geekdada/surgio/commit/7b32873ff906156208ae7a03ea8002534a794c57))
+* youtubePremiumFilter 增加香港 ([821bf3c](https://github.com/geekdada/surgio/commit/821bf3c653767490bf093e0980be091b28f3501d))
 
 
 
@@ -1141,10 +1814,10 @@
 
 ### Features
 
-* 节点增加 tfo 参数 ([a820b89](https://github.com/geekdada/surgio/commit/a820b89590ac3379ccf109539000783b0d7b803a))
+* udp-relay 的值改为布尔类型，兼容字符串类型 ([f3eaaed](https://github.com/geekdada/surgio/commit/f3eaaed03727de525e12a454a8a966fd923f8d89))
 * 仅支持读取 ws 和 tcp 类型的 vmess 节点 ([de5bb35](https://github.com/geekdada/surgio/commit/de5bb35fcc3b4b4e6bb1bb12a6cc6f53bd6de2c8))
 * 新增 getQuantumultXNodes ([d284d04](https://github.com/geekdada/surgio/commit/d284d0415e9524dffebd73d6085d1e11ceef3621))
-* udp-relay 的值改为布尔类型，兼容字符串类型 ([f3eaaed](https://github.com/geekdada/surgio/commit/f3eaaed03727de525e12a454a8a966fd923f8d89))
+* 节点增加 tfo 参数 ([a820b89](https://github.com/geekdada/surgio/commit/a820b89590ac3379ccf109539000783b0d7b803a))
 
 
 
@@ -1162,18 +1835,18 @@
 
 ### Bug Fixes
 
-* 加国旗正确识别中转节点了 ([3751dbf](https://github.com/geekdada/surgio/commit/3751dbf0f7f0d8619cfa28b2ec2cc8c24c4494a7))
 * protoparam 和 obfsparam 中不能有空格 ([6cdb978](https://github.com/geekdada/surgio/commit/6cdb97880913a594115a59d49bfebcf90c555f7f))
+* 加国旗正确识别中转节点了 ([3751dbf](https://github.com/geekdada/surgio/commit/3751dbf0f7f0d8619cfa28b2ec2cc8c24c4494a7))
 
 
 ### Features
 
+* proxyGroupModifier 支持 filter 和 proxies 组合 ([ba0f0c6](https://github.com/geekdada/surgio/commit/ba0f0c6bee8a14490c0124a7ff0773e636fd27e4))
 * 不合法 yaml 文件识别 ([1654534](https://github.com/geekdada/surgio/commit/16545347613026a57bac46eb286e52f894384c11))
-* 兼容v2rayn 订阅格式 ([8ba4625](https://github.com/geekdada/surgio/commit/8ba4625955bfb068028303a56148ac20e109e6e3))
 * 允许用户覆盖 clash 订阅的 udp 转发支持 ([bb58c50](https://github.com/geekdada/surgio/commit/bb58c50aa5334ea9ce1ee4c323aa531dcbb32e79))
+* 兼容v2rayn 订阅格式 ([8ba4625](https://github.com/geekdada/surgio/commit/8ba4625955bfb068028303a56148ac20e109e6e3))
 * 增加 netflixFilter 规则 ([5cc52f1](https://github.com/geekdada/surgio/commit/5cc52f1c237b9c4fcf2dee56ea3c0caaf82695ad))
 * 支持读取 Clash 订阅 ([45ef59f](https://github.com/geekdada/surgio/commit/45ef59f359e21e37f5dac242a33888c74ec1afbc))
-* proxyGroupModifier 支持 filter 和 proxies 组合 ([ba0f0c6](https://github.com/geekdada/surgio/commit/ba0f0c6bee8a14490c0124a7ff0773e636fd27e4))
 
 
 
@@ -1182,10 +1855,10 @@
 
 ### Features
 
-* 新增过滤器 discardKeywords ([b9f0ecb](https://github.com/geekdada/surgio/commit/b9f0ecb97366835a71862cd8f032048322266336))
 * better error message ([26fcaa3](https://github.com/geekdada/surgio/commit/26fcaa3310046fbd886cff2370a8bf31be96dcca))
 * gateway request log ([891168b](https://github.com/geekdada/surgio/commit/891168b6a702a0440b5d0475a25d11345d594f52))
 * quick editing from list-artifact ([2d1d605](https://github.com/geekdada/surgio/commit/2d1d605fe5dd36332a8f04476d397cb7a14b6684))
+* 新增过滤器 discardKeywords ([b9f0ecb](https://github.com/geekdada/surgio/commit/b9f0ecb97366835a71862cd8f032048322266336))
 
 
 
@@ -1249,10 +1922,10 @@
 
 ### Features
 
-* 合并 Provider 接口定义 ([f197e19](https://github.com/geekdada/surgio/commit/f197e198aaf826b91af6896d02046c15976e4962))
 * getNodeNames 和 getClashNodeNames 不再过滤 nodeType ([6571511](https://github.com/geekdada/surgio/commit/6571511f3d30aa3a283a69b81afb9aa548031b18))
 * schema validation for config ([9f11254](https://github.com/geekdada/surgio/commit/9f11254d2bc7107e2299e1146553b03da1e9849f))
 * schema validation for provider ([d738e0f](https://github.com/geekdada/surgio/commit/d738e0f999c91f577deb14793889210620757f36))
+* 合并 Provider 接口定义 ([f197e19](https://github.com/geekdada/surgio/commit/f197e198aaf826b91af6896d02046c15976e4962))
 
 
 
@@ -1369,8 +2042,8 @@
 
 ### Features
 
-* 增加错误文案方便调试 ([ff28793](https://github.com/geekdada/surgio/commit/ff287933e17cb0f7d8f9b7d4a454124420e7610c))
 * 增加了 Flag 识别字段 ([86c1489](https://github.com/geekdada/surgio/commit/86c14898001ab54b6a5387bf533c34d5917b4cbb))
+* 增加错误文案方便调试 ([ff28793](https://github.com/geekdada/surgio/commit/ff287933e17cb0f7d8f9b7d4a454124420e7610c))
 
 
 
@@ -1379,8 +2052,8 @@
 
 ### Bug Fixes
 
-* 不需要 sort ([51f560f](https://github.com/geekdada/surgio/commit/51f560fc86b24c1b4319a83637c90e5449023520))
 * SSR URI 识别问题 ([46184fb](https://github.com/geekdada/surgio/commit/46184fbfdcd1583658db157123902862881413f5))
+* 不需要 sort ([51f560f](https://github.com/geekdada/surgio/commit/51f560fc86b24c1b4319a83637c90e5449023520))
 
 
 
@@ -1389,9 +2062,9 @@
 
 ### Bug Fixes
 
+* clash 规则不输出 ssr 节点名 ([7360c7b](https://github.com/geekdada/surgio/commit/7360c7b86a6f8adb151ba6270193e7c42a1f2069))
 * 不手动指定不使用代理 ([d89198a](https://github.com/geekdada/surgio/commit/d89198a23cff4fe345f5597ab507b8680ac34b54))
 * 文件名在 win 上取值错误 ([310518b](https://github.com/geekdada/surgio/commit/310518bd7cc37c2110dbcb50bdb1d5571bdb68cc))
-* clash 规则不输出 ssr 节点名 ([7360c7b](https://github.com/geekdada/surgio/commit/7360c7b86a6f8adb151ba6270193e7c42a1f2069))
 
 
 
@@ -1409,8 +2082,8 @@
 
 ### Features
 
-* 远程片段支持读取原始内容 ([a1f9e0f](https://github.com/geekdada/surgio/commit/a1f9e0ff7f55b33f98934619a2e90c33ba0c8d20))
 * add support for clashr ([43c4862](https://github.com/geekdada/surgio/commit/43c486277bdff42999f18a71a4627585461e4762))
+* 远程片段支持读取原始内容 ([a1f9e0f](https://github.com/geekdada/surgio/commit/a1f9e0ff7f55b33f98934619a2e90c33ba0c8d20))
 
 
 
@@ -1424,10 +2097,10 @@
 
 ### Features
 
-* 节点名补充国旗 Emoji ([dc1f34e](https://github.com/geekdada/surgio/commit/dc1f34e3616e924acc2773dc7024a5e968981d53))
-* 增加国别判断字段 ([ce6828c](https://github.com/geekdada/surgio/commit/ce6828cdf80bd433d55ad788fac1529ef9b32fc6))
 * add error message ([69b6bff](https://github.com/geekdada/surgio/commit/69b6bfffdca29c1d01cc77cf63730a12f7390822))
 * custom filters ([d5ee8bc](https://github.com/geekdada/surgio/commit/d5ee8bc6b0066eb0d30699191fdcae6262bd4f1a))
+* 增加国别判断字段 ([ce6828c](https://github.com/geekdada/surgio/commit/ce6828cdf80bd433d55ad788fac1529ef9b32fc6))
+* 节点名补充国旗 Emoji ([dc1f34e](https://github.com/geekdada/surgio/commit/dc1f34e3616e924acc2773dc7024a5e968981d53))
 
 
 
@@ -1530,12 +2203,12 @@
 
 ### Features
 
-* 生成 quan 订阅 scheme ([afe0a21](https://github.com/geekdada/surgio/commit/afe0a2120b0eeb048deab09c24964d7bd3e14a60))
-* 生成 v2rayn scheme ([981e6d7](https://github.com/geekdada/surgio/commit/981e6d77517771da9510cc79c7e0cd8c7276d119))
-* 支持导出 Quantumult 的 HTTPS, Shadowsocksr 节点 ([dd728e0](https://github.com/geekdada/surgio/commit/dd728e02345669751b31227327abb20034dc5554))
 * add shadowsocks subscribe support ([e993d1b](https://github.com/geekdada/surgio/commit/e993d1bfa1ab4a50464ca37f647e22cd7c0bee68))
 * add v2rayn subscribe support ([067ad43](https://github.com/geekdada/surgio/commit/067ad4318b456f5ceaf47ad78b79d206544da72e))
 * clash 输出 vmess ([05cc557](https://github.com/geekdada/surgio/commit/05cc5570762d34a3465e71d14fbf78e8a30a1f34))
+* 支持导出 Quantumult 的 HTTPS, Shadowsocksr 节点 ([dd728e0](https://github.com/geekdada/surgio/commit/dd728e02345669751b31227327abb20034dc5554))
+* 生成 quan 订阅 scheme ([afe0a21](https://github.com/geekdada/surgio/commit/afe0a2120b0eeb048deab09c24964d7bd3e14a60))
+* 生成 v2rayn scheme ([981e6d7](https://github.com/geekdada/surgio/commit/981e6d77517771da9510cc79c7e0cd8c7276d119))
 
 
 
@@ -1544,8 +2217,8 @@
 
 ### Features
 
-* 初始化配置时使用 defaultsDeep ([ab8f695](https://github.com/geekdada/surgio/commit/ab8f695a79bbf92248a193805032c81fc2e31434))
 * remote rule set ([a820cdb](https://github.com/geekdada/surgio/commit/a820cdb192daeb1f0a321e75ed447290b4e4207a)), closes [#5](https://github.com/geekdada/surgio/issues/5)
+* 初始化配置时使用 defaultsDeep ([ab8f695](https://github.com/geekdada/surgio/commit/ab8f695a79bbf92248a193805032c81fc2e31434))
 
 
 
@@ -1560,8 +2233,8 @@
 
 ### Features
 
-* 模板 base64 filter ([3d45a23](https://github.com/geekdada/surgio/commit/3d45a23102cf642495e0920c91f2ed94de27a4e2))
 * add cli update support ([2f2d340](https://github.com/geekdada/surgio/commit/2f2d340b0c4f65a1a601f62c2986c5384af6fd76))
+* 模板 base64 filter ([3d45a23](https://github.com/geekdada/surgio/commit/3d45a23102cf642495e0920c91f2ed94de27a4e2))
 
 
 
@@ -1575,8 +2248,8 @@
 
 ### Features
 
-* 属性判空 ([13eb455](https://github.com/geekdada/surgio/commit/13eb455d3258f0067a244117a50688817bdb1433))
 * 在模板中暴露 nodeList 变量 ([c2eeb29](https://github.com/geekdada/surgio/commit/c2eeb295ff2ca7dc0407a2b67f8d1332aa26be60))
+* 属性判空 ([13eb455](https://github.com/geekdada/surgio/commit/13eb455d3258f0067a244117a50688817bdb1433))
 * 支持从 gui-config.json 中解析混淆配置 ([bc135a7](https://github.com/geekdada/surgio/commit/bc135a78c8eb0572ebc67b17ab9d7c6a9b4acf22))
 
 

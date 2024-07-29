@@ -1,6 +1,9 @@
 getSurgeNodes
 {{ getSurgeNodes(nodeList) }}
 ----
+getSurfboardNodes
+{{ getSurfboardNodes(nodeList) }}
+----
 getNodeNames
 {{ getNodeNames(nodeList) }}
 ----
@@ -10,14 +13,8 @@ getQuantumultXNodes
 getSurgeNodes
 {{ getSurgeNodes(nodeList, customFilters.globalFilter) }}
 ----
-getMellowNodes
-{{ getMellowNodes(nodeList) }}
-----
 getLoonNodes
 {{ getLoonNodes(nodeList) }}
-----
-clashProxyConfig
-{{ clashProxyConfig | yaml }}
 ----
 proxyTestUrl
 {{ proxyTestUrl }}

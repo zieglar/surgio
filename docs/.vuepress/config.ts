@@ -1,6 +1,12 @@
-'use strict';
-
+import { defineUserConfig, type HeadConfig, type PluginConfig, type UserConfig } from 'vuepress'
 import { path } from '@vuepress/utils'
+import { docsearchPlugin } from '@vuepress/plugin-docsearch'
+import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
+import { sitemapPlugin } from '@vuepress/plugin-sitemap'
+import { umamiAnalyticsPlugin } from 'vuepress-plugin-umami-analytics'
+import { viteBundler } from '@vuepress/bundler-vite'
+
+import customTheme from './theme'
 
 const meta = {
   title: 'Surgio',
@@ -8,21 +14,13 @@ const meta = {
   url: 'https://surgio.js.org',
   icon: 'https://surgio.js.org/surgio-square.png',
   favicon: 'https://surgio.js.org/favicon-96x96.png',
-};
-const head = [
+}
+
+const head: HeadConfig[] = [
   [
     'link',
     {
-      href:
-        'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Roboto Mono',
-      rel: 'stylesheet',
-      type: 'text/css',
-    },
-  ],
-  [
-    'link',
-    {
-      href: 'https://fonts.googleapis.com/css?family=Dosis:300&amp;text=Vue Select',
+      href: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Roboto Mono',
       rel: 'stylesheet',
       type: 'text/css',
     },
@@ -32,8 +30,8 @@ const head = [
     {
       src: 'https://buttons.github.io/buttons.js',
       async: true,
-      defer: true
-    }
+      defer: true,
+    },
   ],
   ['link', { rel: 'icon', href: '/favicon-96x96.png' }],
   ['link', { rel: 'icon', href: meta.favicon, type: 'image/png' }],
@@ -45,9 +43,36 @@ const head = [
   ['meta', { property: 'og:title', content: meta.title }],
   ['meta', { property: 'og:site_name', content: meta.title }],
   ['meta', { property: 'og:url', content: meta.url }],
-];
+]
 
-export default {
+const plugins: PluginConfig = [
+  registerComponentsPlugin({
+    componentsDir: path.resolve(__dirname, './components'),
+  }),
+]
+
+if (process.env.NODE_ENV === 'production') {
+  plugins.push(
+    docsearchPlugin({
+      appId: 'AXEPS6U765',
+      apiKey: 'c7282707083d364aceb47ba33e14d5ab',
+      indexName: 'surgio',
+    }),
+    sitemapPlugin({
+      hostname: 'https://surgio.js.org',
+    }),
+    umamiAnalyticsPlugin({
+      id: '444a5a25-af75-4c30-b7a4-6aaba520daf6',
+      src: 'https://sashimi.royli.dev/sashimi.js',
+      domains: ['surgio.js.org'],
+      cache: true,
+    }),
+  )
+}
+
+export default defineUserConfig({
+  bundler: viteBundler(),
+  theme: customTheme,
   locales: {
     '/': {
       lang: 'zh-CN',
@@ -58,89 +83,5 @@ export default {
   title: meta.title,
   description: meta.description,
   head,
-  theme: path.resolve(__dirname, './theme'),
-  themeConfig: {
-    docsRepo: 'geekdada/surgio',
-    docsBranch: 'master',
-    repo: 'geekdada/surgio',
-    repoLabel: 'GitHub',
-    editLink: true,
-    editLinkText: '帮助我们改善此页面！',
-    docsDir: 'docs',
-    navbar: [
-      {
-        text: 'Changelog',
-        link: 'https://github.com/surgioproject/surgio/releases',
-      },
-    ],
-    sidebar: [
-      {
-        text: '指南',
-        children: [
-          '/guide',
-          '/guide/getting-started',
-          {
-            text: '自定义',
-            children: [
-              '/guide/custom-config',
-              '/guide/custom-provider',
-              '/guide/custom-template',
-              '/guide/custom-artifact',
-            ],
-          },
-          {
-            text: '客户端规则维护指南',
-            children: ['/guide/client/clash'],
-          },
-          '/guide/api',
-          '/guide/cli',
-          '/guide/faq',
-          '/guide/upgrade-guide-v2',
-          '/guide/learning-resources',
-        ],
-      },
-      {
-        text: '进阶',
-        children: [
-          '/guide/advance/surge-advance',
-          '/guide/advance/custom-filter',
-          '/guide/advance/automation',
-          '/guide/advance/api-gateway',
-          {
-            link: 'https://blog.dada.li/2019/better-proxy-rules-for-apple-services',
-            text: '苹果服务的连接策略推荐'
-          }
-        ],
-      },
-    ],
-  },
-  plugins: [
-    [
-      '@vuepress/docsearch',
-      {
-        apiKey: '6e7242cfd891a169eb12749ab473ba8f',
-        indexName: 'surgio',
-      },
-    ],
-    [
-      '@vuepress/register-components',
-      {
-        components: {
-          Sponsor: path.resolve(__dirname, './components/Sponsor.vue'),
-        },
-      },
-    ],
-    [
-      '@vuepress/google-analytics',
-      {
-        ga: 'UA-146417304-1',
-      },
-    ],
-    [
-      require('./plugin/sitemap'),
-      {
-        hostname: 'https://surgio.js.org',
-      },
-    ],
-  ],
-};
+  plugins,
+}) as UserConfig

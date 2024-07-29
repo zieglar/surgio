@@ -1,10 +1,23 @@
 ---
-sidebarDepth: 2
+sidebarDepth: 1
 ---
 
 # 配置文件
 
 Surgio 的配置文件位于目录内的 `surgio.conf.js`。
+
+Surgio 内置了 `defineSurgioConfig` 方法，可以让 IDE 智能提示配置项，不过你也可以不使用这样的语法糖。下面两种写法都是可以的。
+
+```js
+const { defineSurgioConfig } = require('surgio');
+
+module.exports = defineSurgioConfig({
+  artifacts: [],
+  urlBase: 'https://example.com/',
+  upload: {},
+  binPath: {},
+});
+```
 
 ```js
 module.exports = {
@@ -15,7 +28,7 @@ module.exports = {
 };
 ```
 
-### artifacts
+## artifacts
 
 - 类型: `Artifact[]`
 - 默认值: `undefined`
@@ -23,7 +36,7 @@ module.exports = {
 
 数组内容见 [自定义 Artifact](/guide/custom-artifact.md)。
 
-### urlBase
+## urlBase
 
 - 类型: `string`
 - 默认值: `/`
@@ -35,7 +48,7 @@ module.exports = {
 :::
 
 
-### remoteSnippets
+## remoteSnippets
 
 - 类型: `RemoteSnippet[]`
 - 默认值: `undefined`
@@ -88,7 +101,7 @@ module.exports = {
 片段中宏的入参需要和 `main` 方法调用时的入参 **一一对应**，一个都不能少。
 :::
 
-### upload
+## upload
 
 - 类型: `object`
 - 默认值: `undefined`
@@ -101,25 +114,25 @@ module.exports = {
 - 请不要通过 CDN 访问 OSS 内的文件，这样会导致更新不即时且很难删除
 :::
 
-#### upload.prefix
+### upload.prefix
 
 - 类型: `string`
 - 默认值: `/`
 
 默认保存至根目录，可以修改子目录名，以 / 结尾
 
-#### upload.bucket
+### upload.bucket
 
 - 类型: `string`
 - 默认值: `undefined`
 - <Badge text="必须" vertical="middle" />
 
-#### upload.region
+### upload.region
 
 - 类型: `string`
 - 默认值: `oss-cn-hangzhou`
 
-#### upload.accessKeyId
+### upload.accessKeyId
 
 - 类型: `string`
 - 默认值: `undefined`
@@ -129,7 +142,7 @@ module.exports = {
 请不要将该字段上传至公共仓库。
 :::
 
-#### upload.accessKeySecret
+### upload.accessKeySecret
 
 - 类型: `string`
 - 默认值: `undefined`
@@ -139,25 +152,18 @@ module.exports = {
 请不要将该字段上传至公共仓库。
 :::
 
-### binPath
+## binPath
 
-如果需要生成针对 Surge 的 V2Ray 或 SSR 订阅，需要额外配置此项。
+如果需要生成针对 Surge 的 SSR 订阅，需要额外配置此项。
 
-#### binPath.v2ray
-
-- 类型: `string`
-- 默认值: `undefined`
-
-V2Ray 的可执行文件地址，通常是 `/usr/local/bin/v2ray`。
-
-#### binPath.shadowsocksr
+### binPath.shadowsocksr
 
 - 类型: `string`
 - 默认值: `undefined`
 
 SSR 的可执行文件地址。请使用 libev 版本的二进制文件，可以在 [这篇文章](/guide/advance/surge-advance.md) 找到下载地址和使用方法。
 
-### surgeConfig
+## surgeConfig
 
 - 类型: `object`
 - 默认值: `undefined`
@@ -165,44 +171,29 @@ SSR 的可执行文件地址。请使用 libev 版本的二进制文件，可以
 ```js
 // surgio.conf.js
 module.exports = {
-  surgeConfig: {
-    shadowsocksFormat: 'custom', // or 'ss'
-    v2ray: 'native',
-    resolveHostname: true,
-  },
+  surgeConfig: {},
 };
 ```
 
-#### surgeConfig.shadowsocksFormat
-
-- 类型: `string`
-- 默认值: `ss`
-- 可选值: `custom|ss`
-
-定义生成 Shadowsocks 节点配置的类型，默认使用 `ss` 的形式，旧版本 Surge 需手动设置为 `custom`。
-
-#### surgeConfig.v2ray
-
-- 类型: `string`
-- 默认值: `native`
-- 可选值: `external|native`
-
-:::warning 注意
-仅 Surge 4 for iOS 和 Surge 3.3.1 (894) for macOS 之后的版本支持 `native` 方式。
-:::
-
-定义生成 Vmess 节点配置的类型，默认使用 `native` 的方式。旧版本 Surge for Mac 需要使用 External Provider 的形式
-
-#### surgeConfig.resolveHostname
+### surgeConfig.resolveHostname
 
 - 类型: `boolean`
 - 默认值: `false`
 
-在 Surge 官方对 External Provider 的 [解释](https://medium.com/@Blankwonder/surge-mac-new-features-external-proxy-provider-375e0e9ea660) 中提到，为了不让代理进程（如 ssr-local）的流量经过 Surge 的 TUN 模块，需要额外指定 `addresses` 参数。在之前版本的 Surgio 里，生成的配置不会对域名进行解析，导致实际使用中仍然会造成额外的性能损耗。
+如果你已经开启了全局的 `resolveHostname`，可以不开启此项。
+
+为了不让代理进程（如 ssr-local）的流量经过 Surge 的 TUN 模块，需要额外指定 `addresses` 参数。在之前版本的 Surgio 里，生成的配置不会对域名进行解析，导致实际使用中仍然会造成额外的性能损耗。
 
 打开这个选项后，Surgio 会在生成配置的时候解析域名。不过，这必然会造成生成时间延长，所以请按照个人的需要进行选择。
 
-### quantumultXConfig
+### surgeConfig.vmessAEAD
+
+- 类型: `boolean`
+- 默认值: `true`
+
+默认开启 Vmess AEAD 加密，如果您的服务器不支持 AEAD 加密，请关闭。
+
+## quantumultXConfig
 
 - 类型: `object`
 - 默认值: `undefined`
@@ -214,7 +205,14 @@ module.exports = {
 };
 ```
 
-### clashConfig
+### quantumultXConfig.vmessAEAD
+
+- 类型: `boolean`
+- 默认值: `true`
+
+默认开启 Vmess AEAD 加密，如果您的服务器不支持 AEAD 加密，请关闭。
+
+## clashConfig
 
 - 类型: `object`
 - 默认值: `undefined`
@@ -223,46 +221,129 @@ module.exports = {
 // surgio.conf.js
 module.exports = {
   clashConfig: {
-    ssrFormat: 'native', // or 'legacy'
+    enableTuic: false,
   },
 };
 ```
 
-#### clashConfig.ssrFormat
+### clashConfig.enableTuic
+
+- 类型: `boolean`
+- 默认值: `false`
+
+目前仅 Clash Meta 内核和 Stash 支持 Tuic，如果你希望在 Clash 订阅中输出 Tuic 节点请开启此项。
+
+### clashConfig.enableShadowTls
+
+> <Badge text="v3.0.0" vertical="middle" />
+
+- 类型: `boolean`
+- 默认值: `false`
+
+目前仅 Stash 支持 shadow-tls，如果你希望在 Shadowsocks 节点中使用 shadow-tls 请开启此项。
+
+### clashConfig.enableHysteria2
+
+> <Badge text="v3.1.0" vertical="middle" />
+
+- 类型: `boolean`
+- 默认值: `false`
+
+目前仅 Clash Meta 内核和 Stash 支持 Hysteria v2，如果你希望在 Clash 订阅中输出 Hysteria v2 节点请开启此项。
+
+### clashConfig.enableVless
+
+> <Badge text="v3.6.0" vertical="middle" />
+
+- 类型: `boolean`
+- 默认值: `false`
+
+目前仅 Clash Meta 内核和 Stash 支持 VLESS，如果你希望在 Clash 订阅中输出 VLESS 节点请开启此项。
+
+### clashConfig.clashCore
+
+> <Badge text="v3.2.0" vertical="middle" />
 
 - 类型: `string`
-- 默认值: `native`
-- 可选值: `native|legacy`
+- 默认值: `clash`
+- 可选值: `clash`, `clash.meta`, `stash`
 
-如果你还在使用 ClashR，则需要使用 legacy 的方式输出 Clash 配置。
+Clash 核心版本。默认使用 Clash 核心，如果你希望输出针对 Clash Meta 内核或 Stash 的配置请修改此项。
 
-### gateway
+下面是目前支持的变化：
+
+| 核心 | 变化                                                           |
+| --- |--------------------------------------------------------------|
+| `clash` | 默认值                                                          |
+| `clash.meta` | 模板 `clash` 过滤器会改为过滤 Clash Meta 不支持的规则                        |
+| `stash` | - Hysteria 协议的密码字段改为 `auth`；模板 `clash` 过滤器会改为过滤 Stash 不支持的规则 |
+
+:::warning 注意
+`enableTuic`, `enableShadowTls`, `enableHysteria2`, `enableVless` 这几个配置项和 `clashCore` 目前互不影响，但是将来会合并到 `clashCore` 中。
+:::
+
+## surfboardConfig
 
 - 类型: `object`
 - 默认值: `undefined`
 
+```js
+// surgio.conf.js
+module.exports = {
+  surfboardConfig: {},
+};
+```
+
+### surfboardConfig.vmessAEAD
+
+- 类型: `boolean`
+- 默认值: `true`
+
+默认开启 Vmess AEAD 加密，如果您的服务器不支持 AEAD 加密，请关闭。
+
+## gateway
+
+- 类型: `object`
+- 默认值: `undefined`
+
+```js
+// surgio.conf.js
+module.exports = {
+  gateway: {},
+};
+```
+
 托管 API 相关配置
 
-#### gateway.auth
+### gateway.auth
 
 - 类型: `boolean`
 - 默认值: `false`
 
 是否开启鉴权，默认关闭。若开启则需要在访问 URL 上增加参数 `access_token`。
 
-#### gateway.accessToken
+### gateway.accessToken
 
 - 类型: `string`
 - 默认值: `undefined`
 
-鉴权码。
+用于调用接口和登录的鉴权码。
 
-#### gateway.useCacheOnError
+### gateway.viewerToken
 
-> <Badge text="Gateway: v1.2.0" vertical="middle" />
+- 类型: `string`
+- 默认值: `undefined`
+
+专门用于调用以下接口的鉴权码：
+
+- `/get-artifact`
+- `/export-providers`
+- `/render`
+
+### gateway.useCacheOnError
 
 - 类型: `boolean`
-- 默认值: `undefined`
+- 默认值: `false`
 
 是否在 Artifact 生成错误时使用缓存（上一次正确请求的结果）。
 
@@ -273,7 +354,17 @@ module.exports = {
 2. 适用缓存的接口有 `/get-artifact` 和 `/export-providers`。
 :::
 
-### customFilters
+### gateway.passRequestUserAgent
+
+> <Badge text="Gateway: v2.0.0" vertical="middle" /><br />
+> <Badge text="Surgio v3.0.0" vertical="middle" />
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否将 `/get-artifact` 请求中的 `User-Agent` 传递给上游机场的订阅服务器。这个选项主要用于解决某些机场的订阅服务器对 `User-Agent` 有特殊处理的问题。
+
+## customFilters
 
 - 类型: `object`
 - 默认值: `undefined`
@@ -284,21 +375,35 @@ module.exports = {
 全局的过滤器优先级没有 Provider 中定义的过滤器高，如果遇到同名的过滤器则这里定义的值会被覆盖。
 :::
 
-### proxyTestUrl
+## proxyTestUrl
 
 - 类型: `string`
 - 默认值: `http://cp.cloudflare.com/generate_204`
 
-Clash 规则中的 `url`。
+模板中可以直接引用 `{{ proxyTestUrl }}` 来获取推荐的代理测试 URL。
 
-### proxyTestInterval
+## proxyTestInterval
 
 - 类型: `number`
 - 默认值: `1200`
 
-Clash 规则中的 `interval`。
+模板中可以直接引用 `{{ proxyTestInterval }}` 来获取推荐的测试间隔。
 
-### customParams
+## internetTestUrl
+
+- 类型: `string`
+- 默认值: `http://connect.rom.miui.com/generate_204`
+
+模板中可以直接引用 `{{ internetTestUrl }}` 来获取推荐的联网测试 URL（检测设备是否联网而非梯子是否可用）。
+
+## internetTestInterval
+
+- 类型: `number`
+- 默认值: `1200`
+
+模板中可以直接引用 `{{ internetTestInterval }}` 来获取推荐的测试间隔。
+
+## customParams
 
 - 类型: `object`
 - 默认值: `{}`
@@ -310,7 +415,7 @@ Clash 规则中的 `interval`。
 2. 在合并全局、局部模板变量和面板 URL 参数时的优先级为：URL 参数 > 局部 > 全局；
 :::
 
-### checkHostname <Badge text="v2.3.0" vertical="middle" />
+## checkHostname
 
 - 类型: `boolean`
 - 默认值: `false`
@@ -319,7 +424,18 @@ Clash 规则中的 `interval`。
 
 某些机场的节点域名 TTL 非常小，在某些情况下可能会导致 DNS 回溯解析超时，这样会导致节点本身可用但是被抛弃，所以建议谨慎开启该选项。
 
-### flags <Badge text="v2.5.0" vertical="middle" />
+## resolveHostname
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否解析节点的域名。开启此功能后 Surgio 会将节点的域名解析为 IP 地址，这样可能可以加速节点的连接速度。请注意，这个选项和 `surgeConfig.resolveHostname` 不同，前者是全局配置，后者供生成 Surge 使用的 SSR 配置。假如你已经打开了 `surgeConfig.resolveHostname`，那开启 `resolveHostname` 后可以删除 `surgeConfig.resolveHostname`
+
+打开这个选项后，Surgio 会在生成配置的时候解析域名，这必然会造成生成时间延长，所以请按照个人的需要进行选择。另外，开启此选项后将失去节点的负载均衡功能（如有）和 DNS 解析的灵活性，所以请**谨慎使用**。
+
+部分依赖 SNI 的节点假如你未手动设定 SNI，开启此功能后可能会导致节点无法连接。
+
+## flags
 
 - 类型: `object`
 - 默认值: `undefined`
@@ -344,6 +460,33 @@ module.exports = {
 2. 英文字母请使用大写；
 :::
 
-### 环境变量
+## cache
+
+- 类型: `object`
+- 默认值: `undefined`
+
+定义缓存的实现方式。默认情况下使用本地缓存文件和内存的方式存储。如果你使用了 API 网关，非常推荐开启 Redis 缓存，可以有效降低冷启动的时间。
+
+### cache.type
+
+- 类型: `string`
+- 默认值: `default`
+- 可选值: `default`, `redis`
+
+定义：
+- `default`：使用本地缓存文件和内存的方式存储
+- `redis`: 使用 Redis 的方式存储
+
+### cache.redisUrl
+
+- 类型: `string`
+- 默认值: `undefined`
+
+假如 `cache.type` 为 `redis`，则需要指定 Redis 的连接地址。 这个属性支持的格式有：
+
+- `redis://xxx`
+- `rediss://xxx` (TLS)
+
+## 环境变量
 
 Surgio 支持使用 [环境变量](/guide/env.md) 来调整没有公开的配置，但属于高级用法，请酌情使用。

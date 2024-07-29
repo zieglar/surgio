@@ -1,18 +1,18 @@
-'use strict';
+'use strict'
 
 module.exports = {
   remoteSnippets: [
     {
       name: 'youtube',
-      url: 'https://raw.githubusercontent.com/ConnersHua/Profiles/master/Surge/Ruleset/Media/YouTube.list',
+      url: 'https://raw.githubusercontent.com/geekdada/surge-list/master/youtube.list',
     },
     {
       name: 'global',
-      url: 'https://raw.githubusercontent.com/ConnersHua/Profiles/master/Surge/Ruleset/Global.list',
+      url: 'https://git.royli.dev/me/lhie1_Rules/raw/branch/master/Surge/Surge%203/Provider/Proxy.list',
     },
     {
       name: 'netflix',
-      url: 'https://raw.githubusercontent.com/ConnersHua/Profiles/master/Surge/Ruleset/Media/Netflix.list',
+      url: 'https://git.royli.dev/me/lhie1_Rules/raw/branch/master/Surge/Surge%203/Provider/Media/Netflix.list',
     },
   ],
   artifacts: [
@@ -31,6 +31,6 @@ module.exports = {
     },
   ],
   urlBase: 'https://config.example.com/',
-  // https://surgio.royli.dev/guide/custom-config.html#upload
+  // https://surgio.js.org/guide/custom-config.html#upload
   // upload: {},
-};
+}

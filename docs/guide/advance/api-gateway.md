@@ -11,9 +11,103 @@ sidebarDepth: 1
 
 相信很多人都用过网络上处理规则的 API 接口，也有人在使用过 Surgio 后觉得更新规则不太灵活。虽然我们已经能够通过自动化的方法每隔一段时间更新一次规则，但还是无法做到实时更新。这篇文章就是想教大家，利用现成的 SAAS(Software as a Service) 服务，来实现一个 Surgio 规则仓库的 API。
 
-目前 Surgio 支持两个部署平台，Vercel（推荐）和 Heroku。你也可以部署在自己的主机上，不过没有技术支持。
+目前 Surgio 多个部署平台，推荐 Railway 和 Netlify。你也可以部署在自己的主机上，不过没有技术支持。
 
-需要保证 Surgio 版本号大于 v1.20.0。
+需要保证 Surgio 版本号大于 `v1.20.0`。
+
+## 部署 - Netlify Functions
+
+:::tip 提示
+1. 该方法不要求代码托管平台，可为私有仓库（文章以 GitHub 为例）
+2. 已经部署其它平台的仓库可以修改之后增加部署到 Netlify Functions，互不影响
+3. 我们有一个运行的示例供你参考：[netlify-demo](https://github.com/surgioproject/netlify-demo)
+:::
+
+### 准备
+
+确保 `surgio` 升级至 `v2.17.0` 或以上; `@surgio/gateway` 升级至 `v1.5.0` 或以上。
+
+#### 开启接口鉴权
+
+:::warning 注意
+不建议关闭鉴权！
+:::
+
+请阅读 [这里](/guide/api.md#打开鉴权)。
+
+#### 增加平台配置
+
+在代码库根目录新建文件 `netlify.toml`，内容如下：
+
+```toml
+[build]
+  command = "exit 0"
+  functions = "netlify/functions"
+  publish = "."
+
+[functions]
+  included_files = [
+    "node_modules/surgio/**",
+    "node_modules/@surgio/**",
+    "provider/**",
+    "template/**",
+    "*.js",
+    "*.json"
+  ]
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/index"
+  status = 200
+  force = true
+```
+
+在代码库根目录新建目录 `netlify/functions` 并新建文件 `netlify/functions/index.js`，内容如下：
+
+```js
+'use strict';
+
+const gateway = require('@surgio/gateway');
+
+module.exports.handler = gateway.createLambdaHandler();
+```
+
+将修改 push 到代码库。
+
+### 部署
+
+在 Netlify 中选择新建项目，并选择代码库平台。
+
+![](../images/netlify-connect-to-git-provider.png)
+
+授权成功之后即可选择代码库，然后会看到如下的页面：
+
+![](../images/netlify-import-config.png)
+
+点击 __Deploy site__ 按钮，即可部署。
+
+### 配置 Redis 缓存
+
+:::tip 此步骤可选，推荐配置
+
+[教程](/guide/advance/redis-cache.md)
+:::
+
+### 查看用量
+
+你可以在账户的 Billing 页面查询当月的用量。
+
+### 使用
+
+你可能还需要更新 _surgio.conf.js_ 内 `urlBase` 的值，它应该类似：
+
+```
+https://surgio-demo.netlify.app/get-artifact/
+```
+
+:::tip 移步至
+[托管 API 的功能介绍](/guide/api.md)
+:::
 
 ## 部署 - Railway
 
@@ -21,9 +115,22 @@ sidebarDepth: 1
 1. 该方法要求代码仓库由 GitHub 托管，可为私有仓库
 2. 已经部署 Vercel 的项目可以经过简单修改部署至 Railway
 3. 已经部署 Heroku 的项目可以直接部署至 Railway
+4. 我们有一个运行的示例供你参考：[railway-demo](https://github.com/surgioproject/railway-demo)
 :::
 
 ### 准备
+
+确保 `surgio` 升级至 `v2.17.0` 或以上; `@surgio/gateway` 升级至 `v1.5.0` 或以上。
+
+#### 开启接口鉴权
+
+:::warning 注意
+不建议关闭鉴权！
+:::
+
+请阅读 [这里](/guide/api.md#打开鉴权)。
+
+#### 增加平台配置
 
 在代码库的根目录新建文件 `Procfile`，内容如下：
 
@@ -44,7 +151,7 @@ const PORT = process.env.PORT || 3000
 })()
 ```
 
-参照 [这里](https://github.com/surgioproject/heroku_demo/blob/master/package.json) 在 `scripts` 下补充 `start` 脚本。
+参照 [这里](https://github.com/surgioproject/railway-demo/blob/master/package.json) 在 `scripts` 下补充 `start` 脚本。
 
 ```json
 {
@@ -88,56 +195,28 @@ const PORT = process.env.PORT || 3000
 
 ![](../images/railway-22.png)
 
+### 配置 Redis 缓存
+
+:::tip 此步骤可选，推荐配置
+
+[教程](/guide/advance/redis-cache.md)
+:::
+
 ### 查看用量
 
 Railway 每月有 5 刀的免费用量，足够单个 Surgio 项目使用。你可以在 [这里](https://railway.app/account/billing) 查看本月的用量。
 
 ### 使用
 
+你可能还需要更新 _surgio.conf.js_ 内 `urlBase` 的值，它应该类似：
+
+```
+https://surgio-demo.railway.app/get-artifact/
+```
+
 :::tip 移步至
 [托管 API 的功能介绍](/guide/api.md)
 :::
-
-## 部署 - Heroku
-
-你可以在 [这里](https://github.com/surgioproject/heroku_demo) 找到完整的运行 Demo。
-
-把你的规则仓库同步至 GitHub 后，到 Heroku 关联该项目。
-
-![](../images/heroku_1.png)
-
-关联项目后，开启 `master` 分支自动部署。你可以不开启这一项，后续如果需要更新服务代码则进行手动更新。
-
-![](../images/heroku_2.png)
-
-最后，手动触发一次部署。
-
-![](../images/heroku_3.png)
-
-你可能还需要更新 _surgio.conf.js_ 内 `urlBase` 的值。以这个 Demo 为例，它应该是：
-
-```
-https://surgio-demo.herokuapp.com/get-artifact/
-```
-
-## 部署 - 自有服务器
-
-新建文件 `gateway.js`，内容如下：
-
-```js
-const gateway = require('@surgio/gateway')
-const PORT = process.env.PORT || 3000
-
-;(async () => {
-   const app = await gateway.bootstrapServer()
-   await app.listen(PORT, '0.0.0.0')
-   console.log('> Your app is ready at http://0.0.0.0:' + PORT)
-})()
-```
-
-```bash
-node gateway.js
-```
 
 ## 部署 - Vercel
 
@@ -192,6 +271,7 @@ $ vercel login
         "includeFiles": [
           "provider/**",
           "template/**",
+           "node_modules/@surgio/gateway-frontend/**",
           "*.js",
           "*.json"
         ]

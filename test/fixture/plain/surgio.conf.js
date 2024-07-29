@@ -1,8 +1,10 @@
-'use strict';
+'use strict'
 
-const path = require('path');
+const path = require('path')
 
-module.exports = {
+const { extendOutbounds, defineSurgioConfig } = require('../../../')
+
+module.exports = defineSurgioConfig({
   artifacts: [
     {
       name: 'new_path.conf',
@@ -68,18 +70,29 @@ module.exports = {
           anotherVariableWillBeRewritten: 'another-value',
         },
       },
-      proxyGroupModifier() {
-        return [
+    },
+    {
+      name: 'singbox.json',
+      template: 'singbox',
+      templateType: 'json',
+      extendTemplate: extendOutbounds(
+        ({ getSingboxNodes, getSingboxNodeNames, nodeList }) => [
           {
-            name: 'auto all',
-            type: 'url-test',
+            type: 'direct',
+            tag: 'direct',
+            tcp_fast_open: false,
+            tcp_multi_path: true,
           },
           {
-            name: 'select all',
-            type: 'select',
+            type: 'selector',
+            tag: 'proxy',
+            outbounds: ['auto', ...getSingboxNodeNames(nodeList)],
+            interrupt_exist_connections: false,
           },
-        ];
-      },
+          ...getSingboxNodes(nodeList),
+        ],
+      ),
+      provider: 'ss',
     },
   ],
   urlBase: 'https://example.com/',
@@ -94,9 +107,6 @@ module.exports = {
   gateway: {
     accessToken: 'abcd',
   },
-  surgeConfig: {
-    v2ray: 'native',
-  },
   customFilters: {
     globalFilter: (node) => node.nodeName === '测试中文',
     unused: () => true,
@@ -110,4 +120,4 @@ module.exports = {
   },
   proxyTestUrl: 'http://www.google.com/generate_204',
   proxyTestInterval: 2400,
-};
+})

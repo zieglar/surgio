@@ -5,28 +5,21 @@
 </p>
 
 [![NPM version][npm-image]][npm-url]
-[![TAONPM version][taonpm-image]][taonpm-url]
 ![Nodejs][nodejs-version]
 ![Github Actions][github-actions-image]
 [![Test coverage][codecov-image]][codecov-url]
-[![David deps][david-image]][david-url]
 [![Known Vulnerabilities][snyk-image]][snyk-url]
 [![npm download][download-image]][download-url]
-[![install size](https://packagephobia.now.sh/badge?p=surgio)](https://packagephobia.now.sh/result?p=surgio)
 
 [npm-image]: https://img.shields.io/npm/v/surgio.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/surgio
 [codecov-image]: https://codecov.io/gh/surgioproject/surgio/branch/master/graph/badge.svg
 [codecov-url]: https://codecov.io/gh/surgioproject/surgio
-[david-image]: https://img.shields.io/david/surgioproject/surgio.svg?style=flat-square
-[david-url]: https://david-dm.org/surgioproject/surgio
 [snyk-image]: https://snyk.io/test/npm/surgio/badge.svg?style=flat-square
 [snyk-url]: https://snyk.io/test/npm/surgio
 [download-image]: https://img.shields.io/npm/dm/surgio.svg?style=flat-square
 [download-url]: https://npmjs.org/package/surgio
 [github-actions-image]: https://github.com/surgioproject/surgio/workflows/Node%20CI/badge.svg
-[taonpm-image]: https://npm.taobao.org/badge/v/surgio.svg
-[taonpm-url]: https://npm.taobao.org/package/surgio
 [nodejs-version]: https://img.shields.io/node/v/surgio
 
 ## 文档
@@ -39,9 +32,18 @@
 
 ## Sponsors
 
-[<img width="180" src="docs/.vuepress/public/vxtrans.png" alt="vxtrans">](https://vx.link/?rel=geekdada)
+### [MorseGPT][morse-link]
 
-[vxTrans - 网络优化工具，有效地降低延迟，改善传输性能](https://vx.link/?rel=geekdada)
+[无需海外信用卡和手机号码使用 `gpt-4o` 模型，支持微信、支付宝付款][morse-link]
+
+---
+
+[<img width="180" src="docs/.vuepress/public/vxtrans.png" alt="vxtrans">][vx-link]
+
+[vxTrans - 网络优化工具，有效地降低延迟，改善传输性能][vx-link]
+
+[morse-link]: https://morsegpt.net/?utm_source=surgio
+[vx-link]: https://vx.link/?rel=geekdada
 
 ## Contributors
 

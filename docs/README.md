@@ -4,7 +4,7 @@ title: '一站式各类代理规则生成器'
 heroImage: /surgio-icon.png
 actions:
 - text: 快速上手 →
-  link: /guide/
+  link: /guide
   type: primary
 footer: MIT Licensed | Copyright © 2019-present
 ---
@@ -27,13 +27,9 @@ npx surgio generate
 ```
 
 :::warning 注意
-目前 Surgio 仅支持 Node.js 版本 >= 12。
+目前 Surgio 仅支持 Node.js 版本 >= 18.0.0。
 :::
 
 ### 交流
 
-[<img width="207" src="https://surgio.royli.dev/join-telegram.png">](https://t.me/surgiotg)
-
-<div style="margin-bottom: 2rem">
-  <Sponsor />
-</div>
+[<img width="207" src="https://surgio.js.org/join-telegram.png">](https://t.me/surgiotg)
