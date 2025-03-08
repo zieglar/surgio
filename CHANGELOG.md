@@ -1,3 +1,69 @@
+## [3.10.6](https://github.com/geekdada/surgio/compare/v3.10.5...v3.10.6) (2025-01-06)
+
+
+
+## [3.10.5](https://github.com/geekdada/surgio/compare/v3.10.4...v3.10.5) (2024-12-31)
+
+
+### Features
+
+* Enable dual-stack resolving for ioredis ([d28922b](https://github.com/geekdada/surgio/commit/d28922b085effe65ff1edeac271042e01e4893dd))
+
+
+
+## [3.10.4](https://github.com/geekdada/surgio/compare/v3.10.3...v3.10.4) (2024-12-31)
+
+
+
+## [3.10.3](https://github.com/geekdada/surgio/compare/v3.10.2...v3.10.3) (2024-11-20)
+
+
+### Bug Fixes
+
+* clash wireguard config pre-shared-key key name wrong ([760af58](https://github.com/geekdada/surgio/commit/760af582352de2217c05959cdd433b4c895397eb))
+* correct formatting of peers in Loon configuration ([096db3d](https://github.com/geekdada/surgio/commit/096db3dddb46b77349cbf3fb9daae3dfeb79bea3))
+* distinguish pre-shared-key by clashCore ([f43be62](https://github.com/geekdada/surgio/commit/f43be6287329bc80a5717cf65b73b74abf76ebbb))
+* update Loon node configuration to include keepalive and correct peers formatting ([76782f4](https://github.com/geekdada/surgio/commit/76782f4e8b01e2e0b609f6d9297cb83fb909518b))
+* **utils:** HTTP(S) optional username & password ([805b93e](https://github.com/geekdada/surgio/commit/805b93e61943e9bebc477cf514f3e708fe4ab644))
+
+
+
+## [3.10.2](https://github.com/geekdada/surgio/compare/v3.10.1...v3.10.2) (2024-09-21)
+
+
+
+## [3.10.1](https://github.com/geekdada/surgio/compare/v3.10.0...v3.10.1) (2024-09-17)
+
+
+### Bug Fixes
+
+* Output correct port-hopping config for Surge ([ecc6901](https://github.com/geekdada/surgio/commit/ecc69018cbe8a001e4588e8b8e55261e46a756f6))
+
+
+### Features
+
+* Support port-hopping config from Clash subscription ([1869a1f](https://github.com/geekdada/surgio/commit/1869a1fd49fc41dec7575b802f25b3ac8998c301))
+
+
+
+# [3.10.0](https://github.com/geekdada/surgio/compare/v3.9.3...v3.10.0) (2024-09-08)
+
+
+### Features
+
+* Add port hopping support to Clash and Surge config ([8d867cc](https://github.com/geekdada/surgio/commit/8d867cc036a2ccace8386ef2297c12866a4660b2))
+
+
+
+## [3.9.3](https://github.com/geekdada/surgio/compare/v3.9.2...v3.9.3) (2024-08-12)
+
+
+### Bug Fixes
+
+* singbox wireguard ipv6 endpoint parsing; singbox test case ([b013657](https://github.com/geekdada/surgio/commit/b013657350cdb2ebf016b302c0eada884d018950))
+
+
+
 ## [3.9.2](https://github.com/geekdada/surgio/compare/v3.9.1...v3.9.2) (2024-06-30)
 
 

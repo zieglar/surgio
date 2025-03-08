@@ -1,6 +1,5 @@
 import { defaultTheme } from '@vuepress/theme-default'
 import type { Theme } from 'vuepress'
-import { path } from '@vuepress/utils'
 
 export default {
   name: 'custom-theme',
@@ -52,7 +51,16 @@ export default {
           '/guide/advance/custom-filter',
           '/guide/advance/advanced-provider',
           '/guide/advance/automation',
-          '/guide/advance/api-gateway',
+          {
+            text: '快速搭建托管 API',
+            children: [
+              '/guide/advance/api-gateway',
+              '/guide/advance/api-gateway/zeabur',
+              '/guide/advance/api-gateway/netlify',
+              '/guide/advance/api-gateway/railway',
+              '/guide/advance/api-gateway/vercel',
+            ],
+          },
           '/guide/advance/redis-cache',
           {
             link: 'https://royli.dev/blog/2019/better-proxy-rules-for-apple-services',
@@ -62,7 +70,4 @@ export default {
       },
     ],
   }),
-  layouts: {
-    Layout: path.resolve(__dirname, 'layouts/Layout.vue'),
-  },
 } as Theme;

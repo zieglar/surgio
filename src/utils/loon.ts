@@ -25,7 +25,7 @@ const {
 } = internalFilters
 const logger = createLogger({ service: 'surgio:utils:loon' })
 
-// https://loon0x00.github.io/LoonManual/#/cn/node
+// https://nsloon.app/docs/Node/#%E8%8A%82%E7%82%B9%E6%A0%BC%E5%BC%8F
 export const getLoonNodes = function (
   list: ReadonlyArray<PossibleNodeConfigType>,
   filter?: NodeFilterType | SortedNodeFilterType,
@@ -116,17 +116,20 @@ export const getLoonNodes = function (
             }`,
             nodeConfig.hostname,
             nodeConfig.port,
-            JSON.stringify(nodeConfig.uuid),
-            `transport=${nodeConfig.network}`,
           ]
 
           if (nodeConfig.type === NodeTypeEnum.Vmess) {
             config.push(
               nodeConfig.method === 'auto'
-                ? `method=chacha20-poly1305`
-                : `method=${nodeConfig.method}`,
+                ? `chacha20-poly1305`
+                : nodeConfig.method,
             )
           }
+
+          config.push(
+            JSON.stringify(nodeConfig.uuid),
+            `transport=${nodeConfig.network}`,
+          )
 
           if (nodeConfig.network === 'ws' && nodeConfig.wsOpts) {
             const obfsHost = getHeader(nodeConfig.wsOpts.headers, 'Host')
@@ -263,6 +266,10 @@ export const getLoonNodes = function (
             }
           }
 
+          if (nodeConfig.peers[0].keepalive) {
+            config.push(`keepalive=${nodeConfig.peers[0].keepalive}`)
+          }
+
           for (const peer of nodeConfig.peers) {
             const peerConfig = [
               `public-key=${JSON.stringify(peer.publicKey)}`,
@@ -270,20 +277,18 @@ export const getLoonNodes = function (
             ]
 
             if (peer.allowedIps) {
-              peers.push(`allowed-ips=${JSON.stringify(peer.allowedIps)}}}`)
+              peerConfig.push(`allowed-ips=${JSON.stringify(peer.allowedIps)}`)
             }
             if (peer.presharedKey) {
-              peers.push(`preshared-key=${JSON.stringify(peer.presharedKey)}}}`)
+              peerConfig.push(
+                `preshared-key=${JSON.stringify(peer.presharedKey)}`,
+              )
             }
             if (peer.reservedBits) {
-              peers.push(`reserved=${JSON.stringify(peer.reservedBits)}}`)
+              peerConfig.push(`reserved=${JSON.stringify(peer.reservedBits)}`)
             }
 
             peers.push(`{${peerConfig.join(',')}}`)
-          }
-
-          if (nodeConfig.peers[0].keepalive) {
-            config.push(`keepalive=${nodeConfig.peers[0].keepalive}`)
           }
 
           config.push(`peers=[${peers.join(',')}]`)

@@ -35,6 +35,12 @@ export const getClashNodes = function (
         if (nodeConfig.underlyingProxy) {
           clashNode['dialer-proxy'] = nodeConfig.underlyingProxy
         }
+        if (nodeConfig.ipVersion) {
+          clashNode['ip-version'] = nodeConfig.ipVersion
+        }
+        if (nodeConfig.interfaceName) {
+          clashNode['interface-name'] = nodeConfig.interfaceName
+        }
 
         if ('multiplex' in nodeConfig && nodeConfig.multiplex) {
           // https://wiki.metacubex.one/config/proxies/sing-mux/#sing-mux
@@ -409,6 +415,17 @@ function nodeListMapper(nodeConfig: PossibleNodeConfigType) {
               keyFormat: 'kebabCase',
             },
           ),
+          ...(clashConfig.clashCore === 'stash' && nodeConfig.portHopping
+            ? {
+                ports: nodeConfig.portHopping.replaceAll(';', ','),
+              }
+            : null),
+          ...(clashConfig.clashCore === 'stash' &&
+          nodeConfig.portHoppingInterval
+            ? {
+                'hop-interval': nodeConfig.portHoppingInterval,
+              }
+            : null),
           ...(nodeConfig.alpn ? { alpn: nodeConfig.alpn } : null),
         } as const
       }
@@ -426,6 +443,16 @@ function nodeListMapper(nodeConfig: PossibleNodeConfigType) {
             keyFormat: 'kebabCase',
           },
         ),
+        ...(clashConfig.clashCore === 'stash' && nodeConfig.portHopping
+          ? {
+              ports: nodeConfig.portHopping.replaceAll(';', ','),
+            }
+          : null),
+        ...(clashConfig.clashCore === 'stash' && nodeConfig.portHoppingInterval
+          ? {
+              'hop-interval': nodeConfig.portHoppingInterval,
+            }
+          : null),
         ...(nodeConfig.alpn ? { alpn: nodeConfig.alpn } : null),
       } as const
 
@@ -454,6 +481,20 @@ function nodeListMapper(nodeConfig: PossibleNodeConfigType) {
             keyFormat: 'kebabCase',
           },
         ),
+        ...((clashConfig.clashCore === 'stash' ||
+          clashConfig.clashCore === 'clash.meta') &&
+        nodeConfig.portHopping
+          ? {
+              ports: nodeConfig.portHopping.replaceAll(';', ','),
+            }
+          : null),
+        ...((clashConfig.clashCore === 'stash' ||
+          clashConfig.clashCore === 'clash.meta') &&
+        nodeConfig.portHoppingInterval
+          ? {
+              'hop-interval': nodeConfig.portHoppingInterval,
+            }
+          : null),
         ...(nodeConfig.alpn ? { alpn: nodeConfig.alpn } : null),
       } as const
 
@@ -480,7 +521,9 @@ function nodeListMapper(nodeConfig: PossibleNodeConfigType) {
         port: getPortFromHost(nodeConfig.peers[0].endpoint),
         'public-key': nodeConfig.peers[0].publicKey,
         ...(nodeConfig.peers[0].presharedKey
-          ? { 'preshared-key': nodeConfig.peers[0].presharedKey }
+          ? nodeConfig?.clashConfig?.clashCore === 'clash.meta'
+            ? { 'pre-shared-key': nodeConfig.peers[0].presharedKey }
+            : { 'preshared-key': nodeConfig.peers[0].presharedKey }
           : null),
         ...(nodeConfig.peers[0].reservedBits
           ? {

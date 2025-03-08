@@ -80,6 +80,16 @@ export const SimpleNodeConfigValidator = z.object({
     .optional(),
 
   // Misc
+  portHopping: z
+    .string()
+    .transform((val) => {
+      if (val.includes(',')) {
+        return val.replaceAll(',', ';')
+      }
+      return val
+    })
+    .optional(),
+  portHoppingInterval: z.number().optional(),
   underlyingProxy: z.string().optional(),
   testUrl: z.string().optional(),
   testTimeout: z.number().optional(),
@@ -90,6 +100,8 @@ export const SimpleNodeConfigValidator = z.object({
   hostnameIp: z.array(z.string()).readonly().optional(),
   binPath: z.string().optional(),
   localPort: z.number().optional(),
+  interfaceName: z.string().optional(),
+  ipVersion: z.string().optional(),
 })
 
 export const TlsNodeConfigValidator = SimpleNodeConfigValidator.extend({

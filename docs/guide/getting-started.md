@@ -52,7 +52,7 @@ Surgio 生成出的规则就是「产品」。
 
 ## 目录结构
 
-```txt{5,6,7}
+```txt {5,6,7}
 ./my-rule-store
 ├── node_modules
 ├── package-lock.json
@@ -74,7 +74,7 @@ npx surgio generate
 
 规则已经生成到 `dist` 目录了。
 
-<img src="./images/generate-result.png" width="318">
+<img src="/images/generate-result.png" width="318">
 
 ## 上传规则
 

@@ -812,6 +812,20 @@ module.exports = {
 2. 请不要随意将证书检查关闭；
 :::
 
+### nodeConfig.portHopping
+
+- 类型: `string`
+- 默认值: `undefined`
+
+开启 Tuic 和 Hysteria 协议端口跳跃，目前仅 Surge, Stash 和 Mihomo 支持这一特性。例如 `5000,6000-7000`。该配置支持逗号或分号分割的端口列表，以及连字符分割的端口范围，Surgio 会自动转换成 Surge 和 Stash 支持的格式。
+
+### nodeConfig.portHoppingInterval
+
+- 类型: `number`
+- 默认值: `undefined`
+
+端口跳跃的间隔时间，单位为秒。目前仅 Surge, Stash 和 Mihomo 支持这一特性。
+
 ### nodeConfig.underlyingProxy
 
 - 类型: `string`

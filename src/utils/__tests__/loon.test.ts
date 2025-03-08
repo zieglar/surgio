@@ -21,7 +21,7 @@ test('getLoonNodes', (t) => {
         uuid: '1386f85e-657b-4d6e-9d56-78badb75e1fd',
       },
     ]),
-    '测试 = vmess,1.1.1.1,443,"1386f85e-657b-4d6e-9d56-78badb75e1fd",transport=tcp,method=chacha20-poly1305,over-tls=true',
+    '测试 = vmess,1.1.1.1,443,chacha20-poly1305,"1386f85e-657b-4d6e-9d56-78badb75e1fd",transport=tcp,over-tls=true',
   )
   t.is(
     getLoonNodes([
@@ -46,7 +46,7 @@ test('getLoonNodes', (t) => {
         },
       },
     ]),
-    '测试 = vmess,1.1.1.1,443,"1386f85e-657b-4d6e-9d56-78badb75e1fd",transport=http,method=chacha20-poly1305,path=/test,host=example.com,over-tls=true',
+    '测试 = vmess,1.1.1.1,443,chacha20-poly1305,"1386f85e-657b-4d6e-9d56-78badb75e1fd",transport=http,path=/test,host=example.com,over-tls=true',
   )
   t.is(
     getLoonNodes([
@@ -68,7 +68,7 @@ test('getLoonNodes', (t) => {
         },
       },
     ]),
-    '测试 = vmess,1.1.1.1,443,"1386f85e-657b-4d6e-9d56-78badb75e1fd",transport=ws,method=chacha20-poly1305,path=/test,over-tls=true',
+    '测试 = vmess,1.1.1.1,443,chacha20-poly1305,"1386f85e-657b-4d6e-9d56-78badb75e1fd",transport=ws,path=/test,over-tls=true',
   )
   t.is(
     getLoonNodes([
@@ -219,7 +219,7 @@ test('getLoonNodes', (t) => {
     ]),
     [
       'wg node = wireguard,interface-ip=10.0.0.1,private-key="privateKey",mtu=1420,peers=[{public-key="publicKey",endpoint=wg.example.com:51820}]',
-      'wg node = wireguard,interface-ip=10.0.0.1,private-key="privateKey",interface-ipV6=2001:db8:85a3::8a2e:370:7334,mtu=1420,dns=1.1.1.1,dnsV6=::1,keepalive=25,peers=[allowed-ips="0.0.0.0/0"}},preshared-key="presharedKey"}},{public-key="publicKey",endpoint=wg.example.com:51820}]',
+      'wg node = wireguard,interface-ip=10.0.0.1,private-key="privateKey",interface-ipV6=2001:db8:85a3::8a2e:370:7334,mtu=1420,dns=1.1.1.1,dnsV6=::1,keepalive=25,peers=[{public-key="publicKey",endpoint=wg.example.com:51820,allowed-ips="0.0.0.0/0",preshared-key="presharedKey"}]',
     ].join('\n'),
   )
 })
